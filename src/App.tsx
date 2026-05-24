@@ -16,7 +16,7 @@ import Contact from "./pages/Contact";
 // Unified local image asset registry
 const HERO_VILLA_URL = "/src/assets/images/hero_villa_1779562451333.png";
 const INTERIOR_LIVING_URL = "/src/assets/images/interior_living_1779562473243.png";
-const EXTERIOR_FACADE_URL = "/src/assets/images/exterior_facade_1779562491784.png";
+const EXTERIOR_FACADE_URL = "https://i.ibb.co/VYwPgPxv/file-0000000050ec7207877bc8c5fb2c374d.png";
 const FOREST_PAVILION_URL = "/src/assets/images/forest_pavilion_1779562509341.png";
 
 export default function App() {

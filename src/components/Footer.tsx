@@ -62,9 +62,6 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-studio-black/25 duration-500" />
-              <div className="absolute bottom-3 left-3 font-mono text-[7px] text-white/55 tracking-widest uppercase">
-                ATELIER CAD MODEL // DEPT 04
-              </div>
             </div>
             <div>
               <span className="font-sans text-xs tracking-[0.1em] font-bold leading-none text-white block">
