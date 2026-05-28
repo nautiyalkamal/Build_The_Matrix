@@ -4,6 +4,7 @@ import { Hammer, Landmark, Paintbrush, ShieldCheck, PenTool, ClipboardCheck, Arr
 
 export default function Process() {
   const [hoveredIdx, setHoveredIdx] = useState(0);
+  const [expandedMobileStageIdx, setExpandedMobileStageIdx] = useState<number | null>(null);
 
   const stages = [
     {
@@ -59,7 +60,7 @@ export default function Process() {
   const StageIcon = stages[hoveredIdx].icon;
 
   return (
-    <div className="pt-32 pb-24 md:pb-32 bg-studio-black text-gold-light min-h-screen relative overflow-hidden">
+    <div className="pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-20 md:pb-24 lg:pb-32 bg-studio-black text-gold-light min-h-screen relative overflow-hidden">
       {/* Editorial grid outlines */}
       <div className="absolute inset-x-12 top-0 h-[1px] bg-white/[0.05]" />
       <div className="absolute inset-y-0 left-12 w-[1px] bg-white/[0.03] hidden md:block" />
@@ -67,55 +68,118 @@ export default function Process() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
+        {/* Readjusted heading moved above the grid layout with elegant spacing */}
+        <div className="mb-8 md:mb-12 max-w-2xl">
+          <span className="font-mono text-[9.5px] tracking-[0.4em] text-[#00E5FF] uppercase block mb-2 sm:mb-3 font-bold">
+            05 // MASTER ARCHITECT PROTOCOL
+          </span>
+          <h3 className="font-serif text-3xl md:text-5xl tracking-tight leading-none text-gold-light font-light uppercase">
+            6-Stage <span className="italic">Execution Process</span>
+          </h3>
+        </div>
+
         {/* Split screen layout matching exactly the visual flow in reference video process page */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch border border-white/[0.08] shadow-2xl relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch border border-white/10 bg-studio-black/20 font-sans shadow-2xl relative">
           
           {/* Left Column: List of Stages with photos changing */}
-          <div className="lg:col-span-7 bg-studio-dark/45 p-8 md:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/[0.08] relative">
+          <div className="lg:col-span-7 bg-studio-dark/30 backdrop-blur-xl p-5 sm:p-8 md:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 relative">
             <div>
-              <span className="font-mono text-[9px] tracking-[0.4em] text-gold-beige uppercase block mb-3 font-semibold">
-                03 // MASTER ARCHITECT PROTOCOL
-              </span>
-              <h3 className="font-serif text-3xl md:text-4xl tracking-tight leading-none text-gold-light font-light mb-12 uppercase">
-                6-Stage <span className="italic">Execution Process</span>
-              </h3>
-
               <div className="flex flex-col divide-y divide-white/[0.05]">
                 {stages.map((stage, idx) => {
                   const isActive = idx === hoveredIdx;
+                  const isMobileExpanded = expandedMobileStageIdx === idx;
+                  const ActiveIcon = stage.icon;
                   return (
                     <div
                       key={stage.id}
                       onMouseEnter={() => setHoveredIdx(idx)}
-                      onClick={() => setHoveredIdx(idx)}
-                      className={`py-5 transition-all duration-300 cursor-pointer flex items-center justify-between group relative px-2 ${
+                      onClick={() => {
+                        setHoveredIdx(idx);
+                        setExpandedMobileStageIdx(expandedMobileStageIdx === idx ? null : idx);
+                      }}
+                      className={`py-3.5 sm:py-5 transition-all duration-300 cursor-pointer flex flex-col group relative px-2 ${
                         isActive ? "bg-white/[0.02]" : ""
                       }`}
                     >
-                      <div className="flex items-center gap-6">
-                        <span className={`font-mono text-xs font-semibold ${
-                          isActive ? "text-gold-beige" : "text-gold-light/30"
-                        }`}>
-                          {stage.number}
-                        </span>
+                      {/* Row header content */}
+                      <div className="flex items-center justify-between w-full">
+                        <div className="flex items-center gap-4 sm:gap-6">
+                          <span className={`font-mono text-xs font-semibold ${
+                            isActive ? "text-gold-beige" : "text-gold-light/30"
+                          }`}>
+                            {stage.number}
+                          </span>
 
-                        <span className={`font-serif text-base sm:text-lg tracking-wide transition-all duration-300 ${
-                          isActive ? "text-gold-beige font-normal pl-2" : "text-gold-sand/70 group-hover:text-gold-light"
-                        }`}>
-                          {stage.title}
-                        </span>
+                          <span className={`font-serif text-sm sm:text-base md:text-lg tracking-wide transition-all duration-300 ${
+                            isActive ? "text-gold-beige font-normal pl-2" : "text-gold-sand/70 group-hover:text-gold-light"
+                          }`}>
+                            {stage.title}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                          <span className={`font-mono text-[7.5px] uppercase tracking-widest text-[#7F7A75] flex lg:hidden ${
+                            isMobileExpanded ? "opacity-100" : "opacity-0 duration-300"
+                          }`}>
+                            {isMobileExpanded ? "OPENED" : "OPEN"}
+                          </span>
+                          <span className={`font-mono text-[7.5px] uppercase tracking-widest text-[#7F7A75] hidden lg:inline ${
+                            isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100 duration-300"
+                          }`}>
+                            ACTIVATE
+                          </span>
+                          <ArrowUpRight className={`w-3.5 h-3.5 transition-all duration-500 ${
+                            isMobileExpanded 
+                              ? "text-gold-beige rotate-90 scale-110 font-bold" 
+                              : isActive 
+                                ? "text-gold-beige rotate-45 scale-110 font-bold" 
+                                : "text-white/20 group-hover:text-gold-light/50"
+                          }`} />
+                        </div>
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <span className={`font-mono text-[8px] uppercase tracking-widest text-[#7F7A75] ${
-                          isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100 duration-300"
-                        }`}>
-                          ACTIVATE DETAILS
-                        </span>
-                        <ArrowUpRight className={`w-3.5 h-3.5 transition-all duration-500 ${
-                          isActive ? "text-gold-beige rotate-45 scale-110 font-bold" : "text-white/20 group-hover:text-gold-light/50"
-                        }`} />
-                      </div>
+                      {/* Mobile Expandable content (only active on screens smaller than lg) */}
+                      <AnimatePresence>
+                        {isMobileExpanded && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="w-full overflow-hidden block lg:hidden"
+                          >
+                            <div className="pt-4 pb-5 px-4 bg-white/[0.03] border border-white/10 mt-3 flex flex-col gap-4 text-left">
+                              <div className="flex gap-2 items-center text-gold-beige font-mono text-[9px] uppercase tracking-wider">
+                                <ActiveIcon className="w-4 h-4 text-yellow-250" />
+                                <span>ACTIVE PROTOCOL: STAGE {stage.number}</span>
+                              </div>
+
+                              <p className="font-sans text-xs sm:text-sm text-zinc-300 leading-relaxed font-light text-justify">
+                                {stage.details}
+                              </p>
+
+                              <div className="aspect-[16/10] w-full overflow-hidden border border-white/10 relative">
+                                <img
+                                  src={stage.imageUrl}
+                                  alt={stage.title}
+                                  className="w-full h-full object-cover opacity-90"
+                                  referrerPolicy="no-referrer"
+                                />
+                              </div>
+
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setExpandedMobileStageIdx(null);
+                                }}
+                                className="self-end px-3 py-1.5 bg-white text-black font-mono text-[8px] font-bold tracking-widest uppercase hover:bg-neutral-200 transition-colors duration-200 flex items-center gap-1 shadow-sm"
+                              >
+                                ✕ CLOSE CONTENT
+                              </button>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
                 })}
@@ -123,14 +187,14 @@ export default function Process() {
             </div>
 
             {/* Micro blueprint specification line */}
-            <div className="border-t border-white/[0.06] pt-6 mt-12 flex justify-between items-center text-[#7F7A75] font-mono text-[8px] tracking-[0.2em]">
+            <div className="border-t border-white/[0.06] pt-4 sm:pt-6 mt-8 sm:mt-12 flex justify-between items-center text-[#7F7A75] font-mono text-[8px] tracking-[0.2em]">
               <span>ISO-14001 SITE WORK SYSTEM DESIGN</span>
               <span>VERIFIED STAGE // OBY-2026-P{hoveredIdx+1}</span>
             </div>
           </div>
 
           {/* Right Column: Grounded Solid Earth-Orange/Bronze backdrop box displaying active details */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#854D0E] to-[#78350F] p-8 md:p-12 flex flex-col justify-between text-white relative">
+          <div className="hidden lg:flex lg:col-span-5 bg-gradient-to-br from-[#854D0E]/85 to-[#78350F]/85 backdrop-blur-xl border-l border-white/15 p-5 sm:p-8 md:p-12 flex flex-col justify-between text-white relative">
             {/* Glowing pattern elements */}
             <div className="absolute inset-0 bg-black/15 mix-blend-overlay" />
             <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-3xl pointer-events-none" />
@@ -139,26 +203,26 @@ export default function Process() {
             <div className="absolute top-4 left-4 border-t border-l border-white/25 w-8 h-8 pointer-events-none" />
             <div className="absolute bottom-4 right-4 border-b border-r border-white/25 w-8 h-8 pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col h-full justify-between gap-8">
+            <div className="relative z-10 flex flex-col h-full justify-between gap-6 sm:gap-8">
               <div>
-                <span className="font-mono text-[9px] tracking-[0.3em] text-white/70 uppercase block mb-2">
+                <span className="font-mono text-[8px] sm:text-[9px] tracking-[0.3em] text-white/70 uppercase block mb-1 sm:mb-2">
                   EXPERIENCE FOCUSED DESIGN
                 </span>
                 
-                <h4 className="font-serif text-3xl md:text-4xl font-light text-white leading-tight mb-8">
+                <h4 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-white leading-tight mb-4 sm:mb-8">
                   Choreographing <br />
-                  <span className="italic text-yellow-100 uppercase font-semibold">Your Vision</span>
+                  <span className="italic text-yellow-105 uppercase font-semibold">Your Vision</span>
                 </h4>
 
-                <div className="flex items-center gap-3 bg-white/10 border border-white/10 px-4 py-3.5 mb-6">
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 border border-white/10 px-3 py-2.5 sm:px-4 sm:py-3.5 mb-4 sm:mb-6">
                   {/* Dynamic icon mapping */}
-                  <StageIcon className="w-5 h-5 text-yellow-200" />
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-yellow-100 uppercase font-bold">
+                  <StageIcon className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-yellow-200" />
+                  <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.15em] text-yellow-100 uppercase font-bold">
                     ACTIVE PROTOCOL: STAGE {stages[hoveredIdx].number}
                   </span>
                 </div>
 
-                <p className="font-sans text-sm text-yellow-50/90 leading-relaxed font-light mb-8">
+                <p className="font-sans text-xs sm:text-sm text-yellow-50/90 leading-relaxed font-light mb-4 sm:mb-8 text-justify">
                   {stages[hoveredIdx].details}
                 </p>
               </div>
@@ -238,7 +302,7 @@ export default function Process() {
                 desc: "Atelier master builders direct local heritage masons to assemble structures directly under our close daily performance reviews and quality assurance codes."
               }
             ].map((p, idx) => (
-              <div key={idx} className="p-6 bg-white/[0.01] border border-white/[0.04] flex flex-col justify-between hover:bg-white/[0.03] hover:border-gold-beige/25 transition-all duration-350">
+              <div key={idx} className="p-6 bg-white/[0.02] backdrop-blur-md border border-white/15 flex flex-col justify-between hover:bg-white/[0.04] hover:border-gold-beige/40 transition-all duration-300 shadow-md">
                 <div className="flex justify-between items-baseline border-b border-white/[0.05] pb-3 mb-4">
                   <span className="font-mono text-[9px] text-gold-beige font-semibold tracking-widest">{p.phase}</span>
                   <span className="font-mono text-[8px] text-[#7F7A75] tracking-tight">{p.weeks}</span>
@@ -260,7 +324,7 @@ export default function Process() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="p-6 border border-white/[0.06] bg-studio-dark/30 flex flex-col gap-4">
+              <div className="p-6 border border-white/10 bg-studio-dark/25 backdrop-blur-xl flex flex-col gap-4 shadow-md">
                 <h4 className="font-mono text-[10px] font-bold text-gold-beige tracking-widest uppercase">
                   ✓ GEOTECHNICAL CORE INTEGRITY
                 </h4>
@@ -269,7 +333,7 @@ export default function Process() {
                 </p>
               </div>
 
-              <div className="p-6 border border-white/[0.06] bg-studio-dark/30 flex flex-col gap-4">
+              <div className="p-6 border border-white/10 bg-studio-dark/25 backdrop-blur-xl flex flex-col gap-4 shadow-md">
                 <h4 className="font-mono text-[10px] font-bold text-gold-beige tracking-widest uppercase">
                   ✓ CONCRETE SLUMP FLOW INSPECTION
                 </h4>
@@ -278,7 +342,7 @@ export default function Process() {
                 </p>
               </div>
 
-              <div className="p-6 border border-white/[0.06] bg-studio-dark/30 flex flex-col gap-4">
+              <div className="p-6 border border-white/10 bg-studio-dark/25 backdrop-blur-xl flex flex-col gap-4 shadow-md">
                 <h4 className="font-mono text-[10px] font-bold text-gold-beige tracking-widest uppercase">
                   ✓ WOOD MOISTURE COEFFICIENT ANALYSIS
                 </h4>
@@ -287,7 +351,7 @@ export default function Process() {
                 </p>
               </div>
 
-              <div className="p-6 border border-white/[0.06] bg-studio-dark/30 flex flex-col gap-4">
+              <div className="p-6 border border-white/10 bg-studio-dark/25 backdrop-blur-xl flex flex-col gap-4 shadow-md">
                 <h4 className="font-mono text-[10px] font-bold text-gold-beige tracking-widest uppercase">
                   ✓ ACOUSTICAL SOUND DECAY AUDITS
                 </h4>

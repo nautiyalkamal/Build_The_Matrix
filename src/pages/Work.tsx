@@ -2,17 +2,33 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { MapPin, Calendar, ClipboardList, Scale, Info, Layers, Compass, ArrowRight, X, Sparkles } from "lucide-react";
 import { Project } from "../types";
+import ArchMatrixBackground from "../components/ArchMatrixBackground";
 
 interface WorkProps {
   heroImage: string;
   interiorImage: string;
   exteriorImage: string;
   pavilionImage: string;
+  onProjectOpenToggle?: (isOpen: boolean) => void;
 }
 
-export default function Work({ heroImage, interiorImage, exteriorImage, pavilionImage }: WorkProps) {
+export default function Work({ heroImage, interiorImage, exteriorImage, pavilionImage, onProjectOpenToggle }: WorkProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("ALL");
+
+  React.useEffect(() => {
+    if (onProjectOpenToggle) {
+      onProjectOpenToggle(!!selectedProject);
+    }
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedProject, onProjectOpenToggle]);
 
   const projects: Project[] = [
     {
@@ -56,7 +72,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
       year: "2025",
       category: "BIM & VISUALIZATION",
       description: "A detailed BIM coordination and visualization project developed using advanced Revit workflows, clash detection systems, construction documentation, and photorealistic rendering pipelines.",
-      imageUrl: exteriorImage,
+      imageUrl: "https://i.ibb.co/Kz7ybJGH/1774899600691-2.jpg",
       client: "High-Rise BIM Coordination",
       scale: "18,500 m² GFA",
       materials: ["BIM-Based Coordination", "Parametric Facade Systems", "Smart Structural Modeling"],
@@ -124,7 +140,19 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
     : projects.filter(p => p.category === activeFilter);
 
   return (
-    <div className="pt-32 pb-24 md:pb-32 bg-[#0b0c0e] text-white min-h-screen relative">
+    <div className="pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-16 sm:pb-24 md:pb-28 lg:pb-36 bg-[#000000] text-white min-h-screen relative overflow-hidden">
+      {/* Structural background architectural grid (remains behind all components for crystal clear text readability) */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <ArchMatrixBackground 
+          particleCount={0} 
+          showGrid={true} 
+          wireframeColor="rgba(0, 229, 255, 0.04)" 
+          accentColor="rgba(0, 229, 255, " 
+          zIndex={0}
+          canvasOpacity="opacity-40"
+        />
+      </div>
+
       {/* Structural layout markers */}
       <div className="absolute inset-x-12 top-0 h-[1px] bg-white/[0.05]" />
       <div className="absolute inset-y-0 left-12 w-[1px] bg-white/[0.03] hidden md:block" />
@@ -133,38 +161,55 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Page title section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 md:gap-8 mb-8 sm:mb-10 lg:mb-12">
           <div>
-            <span className="font-mono text-[10px] tracking-[0.4em] text-white/40 uppercase block mb-3 font-semibold">
-              02 // PROJECT DIRECTORY
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.4em] text-[#00E5FF] uppercase block mb-1.5 font-semibold">
+              03 // PROJECT DIRECTORY
             </span>
-            <h2 className="text-4xl sm:text-5xl tracking-tight text-white font-extralight leading-none">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl tracking-tight text-white font-extralight leading-none">
               Featured <span className="font-normal">Architectural & BIM Works</span>
             </h2>
           </div>
 
-          {/* Filter Categories */}
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            {["ALL", "RESIDENTIAL ARCHITECTURE", "COMMERCIAL SPACES", "INTERIOR DESIGN", "BIM & VISUALIZATION"].map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 font-mono text-[10px] tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer border ${
-                  activeFilter === filter
-                    ? "bg-white text-black border-white font-semibold"
-                    : "bg-transparent text-white/50 border-white/[0.15] hover:text-white hover:border-white"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
+          {/* Filter Categories aligned in a highly aesthetic, compact, dual-row system */}
+          <div className="flex flex-col gap-2 w-full lg:w-auto max-w-2xl">
+            <div className="flex flex-row flex-wrap sm:flex-nowrap gap-2 justify-start">
+              {["ALL", "RESIDENTIAL ARCHITECTURE", "COMMERCIAL SPACES"].map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-3 py-2 font-mono text-[8px] xs:text-[9px] tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer border flex-1 text-center min-h-[36px] flex items-center justify-center ${
+                    activeFilter === filter
+                      ? "bg-white text-black border-white font-extrabold shadow-[0_0_15px_rgba(255,255,255,0.08)]"
+                      : "bg-transparent text-white/55 border-white/10 hover:text-white hover:border-white hover:bg-white/[0.02]"
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-row flex-wrap sm:flex-nowrap gap-2 justify-start">
+              {["INTERIOR DESIGN", "BIM & VISUALIZATION"].map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-3 py-2 font-mono text-[8px] xs:text-[9px] tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer border flex-1 text-center min-h-[36px] flex items-center justify-center ${
+                    activeFilter === filter
+                      ? "bg-white text-black border-white font-extrabold shadow-[0_0_15px_rgba(255,255,255,0.08)]"
+                      : "bg-transparent text-white/55 border-white/10 hover:text-white hover:border-white hover:bg-white/[0.02]"
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Dynamic Project Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -175,53 +220,63 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="group relative flex flex-col justify-between bg-[#111215] border border-white/[0.06] p-6 rounded-none hover:border-white/20 transition-all duration-500 shadow-xl"
+                className="group relative flex flex-col justify-between bg-[#000000] border border-white/15 p-4 sm:p-5 lg:p-6 rounded-none hover:border-[#00E5FF]/35 hover:shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_30px_rgba(0,229,255,0.06)] transition-all duration-500 shadow-xl overflow-hidden"
               >
-                <div className="absolute top-0 right-0 p-3 font-mono text-[8px] text-white/45 tracking-widest uppercase border-l border-b border-white/[0.05] bg-black/40">
+                {/* Subtle back-glow atmosphere sphere inside card boundary */}
+                <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(0,229,255,0.05)_0%,transparent_75%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                {/* Laser-guided micro glow accent border on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#00E5FF]/60 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center shadow-[0_0_8px_rgba(0,229,255,0.7)]" />
+
+                <div className="absolute top-0 right-0 p-2 sm:p-3 font-mono text-[8.5px] text-[#00E5FF] tracking-widest uppercase border-l border-b border-white/10 bg-black/90 [text-shadow:0_0_6px_rgba(0,229,255,0.3)] z-10">
                   {project.category}
                 </div>
 
-                <div className="relative aspect-[16/10] overflow-hidden bg-zinc-800 border border-white/[0.05] mb-6 mt-4">
+                <div className="relative aspect-[16/10] overflow-hidden bg-zinc-950 border border-white/10 mb-4 sm:mb-6 mt-2 sm:mt-4">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102"
+                    className={`w-full h-full transition-transform duration-1000 ${
+                      project.id === "project-3"
+                        ? "object-cover scale-[1.2] group-hover:scale-[1.25]"
+                        : "object-cover group-hover:scale-102"
+                    }`}
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 </div>
 
-                <div className="flex flex-col gap-4">
-                  <div className="flex justify-between items-baseline border-b border-white/[0.08] pb-1">
-                    <span className="font-mono text-[8px] text-white/40 tracking-widest">
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <div className="flex justify-between items-baseline border-b border-white/15 pb-1">
+                    <span className="font-mono text-[8.5px] text-[#00E5FF] tracking-widest font-semibold [text-shadow:0_0_5px_rgba(0,229,255,0.25)]">
                       REF-0{index + 1}
                     </span>
-                    <span className="font-mono text-xs text-white/70 font-semibold">
+                    <span className="font-mono text-xs text-white font-extrabold">
                       {project.year}
                     </span>
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono text-[9px] text-[#D97706] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[8.5px] sm:text-[9.5px] text-[#F59E0B] uppercase tracking-wider font-bold [text-shadow:0_0_8px_rgba(245,158,11,0.2)]">
                       {project.client}
                     </span>
-                    <h3 className="text-xl font-sans font-medium text-white tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-sans font-semibold text-white tracking-tight leading-snug">
                       {project.title}
                     </h3>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-white/60 font-sans text-xs">
-                    <MapPin className="w-3.5 h-3.5 text-white/40" />
-                    <span>{project.location}</span>
+                  <div className="flex items-center gap-1.5 text-zinc-150 font-sans text-xs">
+                    <MapPin className="w-3.5 h-3.5 text-[#00E5FF] [filter:drop-shadow(0_0_3px_#00E5FF)]" />
+                    <span className="text-zinc-200 font-light">{project.location}</span>
                   </div>
 
-                  <p className="text-xs text-white/60 leading-relaxed line-clamp-3 font-light">
+                  <p className="text-xs text-zinc-350 leading-relaxed line-clamp-3 font-normal text-justify">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 mt-2">
+                  <div className="flex flex-wrap gap-1 mt-1 sm:mt-2">
                     {project.materials.slice(0, 3).map((mat, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-white/[0.03] border border-white/[0.06] font-mono text-[9px] text-white/75">
+                      <span key={i} className="px-2 py-0.5 bg-zinc-950 border border-white/20 font-mono text-[8.5px] sm:text-[9px] text-white font-medium">
                         {mat}
                       </span>
                     ))}
@@ -229,7 +284,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="mt-6 w-full py-3 bg-zinc-900 group-hover:bg-white group-hover:text-black text-white border border-white/[0.08] group-hover:border-white font-mono text-[10px] tracking-[0.2em] uppercase transition-all duration-500 rounded-none cursor-pointer flex items-center justify-center gap-2 font-bold"
+                    className="mt-4 sm:mt-6 w-full py-3 bg-zinc-950 text-white border border-white/20 group-hover:bg-[#00E5FF] group-hover:text-black group-hover:border-[#00E5FF] font-mono text-[10px] tracking-[0.2em] uppercase transition-all duration-500 rounded-none cursor-pointer flex items-center justify-center gap-2 font-extrabold group-hover:shadow-[0_0_15px_rgba(0,229,255,0.4)]"
                   >
                     <span>Project Specifications</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -243,7 +298,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
         {/* Specifications Detail Drawout overlay */}
         <AnimatePresence>
           {selectedProject && (
-            <div className="fixed inset-0 z-[1000] flex items-center justify-end">
+            <div data-no-swipe="true" className="fixed inset-0 z-[1000] flex items-center justify-end">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.8 }}
@@ -257,22 +312,26 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", damping: 30, stiffness: 220 }}
-                className="relative w-full max-w-2xl h-full bg-[#111215] border-l border-white/[0.1] text-white p-8 md:p-12 overflow-y-auto z-10 flex flex-col justify-between"
+                data-no-swipe="true"
+                className="relative w-full max-w-2xl h-full bg-zinc-950/95 backdrop-blur-2xl border-l border-white/10 text-white z-10 flex flex-col justify-between shadow-2xl overflow-hidden"
               >
-                <div>
-                  <div className="flex justify-between items-center border-b border-white/[0.08] pb-6 mb-8">
-                    <span className="font-mono text-[9px] tracking-[0.3em] text-white/50 uppercase flex items-center gap-2">
-                      <ClipboardList className="w-3.5 h-3.5 text-white" />
-                      MASTER ARCHITECTURAL LEDGER
-                    </span>
-                    <button
-                      onClick={() => setSelectedProject(null)}
-                      className="p-1.5 border border-white/[0.1] hover:border-white hover:bg-white/[0.04] text-white rounded-none cursor-pointer"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
+                {/* 1. STICKY HEADER WITH ACCESSIBLE CLOSE BUTTON */}
+                <div className="flex-none p-5 sm:px-8 sm:py-6 md:px-12 border-b border-white/[0.08] bg-zinc-950/80 backdrop-blur-md flex justify-between items-center z-20">
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-white/50 uppercase flex items-center gap-2">
+                    <ClipboardList className="w-3.5 h-3.5 text-[#00E5FF]" />
+                    MASTER ARCHITECTURAL LEDGER
+                  </span>
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="flex items-center gap-2 px-3 py-1.5 border border-white/[0.12] hover:border-white hover:bg-white/[0.05] text-white/80 hover:text-white font-mono text-[9px] tracking-wider uppercase rounded-none cursor-pointer duration-300 bg-zinc-900/60"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                    <span>Close</span>
+                  </button>
+                </div>
 
+                {/* 2. SCROLLABLE MIDDLE CONTAINER */}
+                <div className="flex-grow overflow-y-auto p-5 sm:p-8 md:p-12 flex flex-col gap-4">
                   <div className="flex flex-col gap-4">
                     <div className="flex justify-between items-baseline">
                       <div className="flex flex-col gap-1">
@@ -293,11 +352,15 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                       <span>{selectedProject.location}</span>
                     </div>
 
-                    <div className="aspect-[16/9] w-full overflow-hidden bg-zinc-800 border border-white/[0.08] mb-6">
+                    <div className="aspect-[16/9] w-full overflow-hidden bg-zinc-800 border border-white/[0.08] mb-6 mt-6 sm:mt-2">
                       <img
                         src={selectedProject.imageUrl}
                         alt={selectedProject.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${
+                          selectedProject.id === "project-3"
+                            ? "object-cover scale-[1.2]"
+                            : "object-cover"
+                        }`}
                         referrerPolicy="no-referrer"
                       />
                     </div>
@@ -338,7 +401,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                       </span>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.materials.map((mat, i) => (
-                          <span key={i} className="px-2.5 py-1 bg-white/[0.04] border border-white/[0.06] font-mono text-[10px] text-white/80 font-medium font-bold">
+                          <span key={i} className="px-2.5 py-1 bg-white/[0.06] backdrop-blur-sm border border-white/10 font-mono text-[10px] text-white/80 font-bold">
                             {mat}
                           </span>
                         ))}
@@ -352,7 +415,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                       </span>
                       <div className="flex flex-col gap-2">
                         {selectedProject.specs.map((spec, i) => (
-                          <div key={i} className="bg-white/[0.01] border border-white/[0.04] p-3 flex flex-col gap-1">
+                          <div key={i} className="bg-white/[0.02] backdrop-blur-md border border-white/10 p-3 flex flex-col gap-1">
                             <span className="font-mono text-[9px] text-white/75 uppercase tracking-widest font-semibold">
                               {spec.label}
                             </span>
@@ -366,16 +429,13 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                   </div>
                 </div>
 
-                <div className="border-t border-white/[0.08] pt-6 mt-12 flex justify-between items-center text-white/40">
+                {/* 3. STICKY FOOTER WITH QUICK ACTION */}
+                <div className="flex-none border-t border-white/[0.08] p-5 sm:px-8 sm:py-6 md:px-12 bg-zinc-950 flex justify-between items-center text-white/40 text-[7.5px] tracking-widest z-20">
                   <div className="flex flex-col">
-                    <span className="font-mono text-[7.5px] tracking-widest leading-none">
-                      BUILD THE MATRIX ARCHITECTURAL ALLIANCE
-                    </span>
-                    <span className="font-mono text-[7.5px] tracking-widest leading-none mt-1">
-                      SAN FRANCISCO // SAN JOSE // MILAN // LONDON
-                    </span>
+                    <span>BUILD THE MATRIX ARCHITECTURAL ALLIANCE</span>
+                    <span className="mt-1 opacity-70">SAN FRANCISCO // SAN JOSE // MILAN // LONDON</span>
                   </div>
-                  <span className="font-mono text-[8px] tracking-wider border border-white/10 px-2 py-0.5">
+                  <span className="font-mono text-[8px] tracking-wider border border-white/10 px-2.5 py-1 text-white/40">
                     APPROVED BLUEPRINT
                   </span>
                 </div>
@@ -401,7 +461,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
             </p>
           </div>
 
-          <div className="overflow-x-auto border border-white/[0.06]">
+          <div className="hidden sm:block overflow-x-auto border border-white/[0.06]">
             <table className="w-full text-left font-mono text-xs">
               <thead>
                 <tr className="bg-white/[0.01] border-b border-white/[0.08] text-white/40 uppercase text-[9px] tracking-wider">
@@ -462,6 +522,18 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
           </div>
         </div>
 
+      </div>
+
+      {/* Immersive overlay with floating luxury/premium particles cruising over cards, buttons, and images */}
+      <div className="absolute inset-0 pointer-events-none z-30">
+        <ArchMatrixBackground 
+          particleCount={110} 
+          showGrid={false} 
+          wireframeColor="rgba(0, 229, 255, 0)" 
+          accentColor="rgba(0, 229, 255, " 
+          zIndex={30}
+          canvasOpacity="opacity-70"
+        />
       </div>
     </div>
   );

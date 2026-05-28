@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, Phone, Clock, FileCheck, ArrowUpRight, Sparkles } from "lucide-react";
+import ArchMatrixBackground from "../components/ArchMatrixBackground";
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -45,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-32 pb-24 md:pb-32 bg-gold-light text-studio-black min-h-screen relative overflow-hidden">
+    <div className="pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-20 md:pb-24 bg-gold-light text-studio-black min-h-screen relative overflow-hidden">
       {/* Editorial layout grid outlines */}
       <div className="absolute inset-x-12 top-0 h-[1px] bg-studio-black/[0.08]" />
       <div className="absolute inset-y-0 left-12 w-[1px] bg-studio-black/[0.03] hidden md:block" />
@@ -54,106 +55,47 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Banner Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
-          <div className="lg:col-span-12 xl:col-span-5">
-            <span className="font-mono text-[10px] tracking-[0.4em] text-gold-bronze uppercase block mb-3 font-semibold">
-              05 // CONTACT & PROJECT ENQUIRIES
-            </span>
-            <h2 className="font-serif text-4xl sm:text-5xl tracking-tight text-studio-black leading-none uppercase">
-              Let’s Create <br />
-              <span className="italic font-normal text-gold-bronze">Exceptional Spaces Together</span>
-            </h2>
-          </div>
-          <p className="lg:col-span-12 xl:col-span-7 font-sans text-sm sm:text-base text-studio-charcoal/80 font-light max-w-2xl leading-relaxed text-justify">
-            BUILD THE MATRIX collaborates on carefully curated architectural, BIM, interior, and visualization projects that demand creativity, precision, and modern design thinking. Whether you are planning a residence, commercial environment, hospitality project, or visualization concept — our studio is ready to transform your vision into reality.
-          </p>
-        </div>
-
-        {/* Studio Contact Section */}
-        <div id="studio-contact" className="my-12 p-8 border border-studio-black/[0.08] bg-white/[0.25] shadow-sm">
-          <div className="mb-6 pb-4 border-b border-studio-black/[0.08]">
-            <span className="font-mono text-[9px] text-[#7F7A75] uppercase block tracking-widest font-bold">
-              STUDIO CONTACT
-            </span>
-            <h3 className="font-serif text-2xl text-studio-black font-semibold mt-1">
-              BUILD THE MATRIX
-            </h3>
-            <span className="font-mono text-[10px] text-gold-bronze font-light uppercase tracking-wide block mt-1">
-              Architecture • BIM • Visualization • Interiors
+        <div className="mb-8 sm:mb-12 lg:mb-16">
+          <div className="border-b-2 border-black pb-3 sm:pb-4 mb-6 sm:mb-8 w-full">
+            <span className="font-mono text-[9.5px] sm:text-[10.5px] tracking-[0.4em] text-studio-black uppercase block font-bold">
+              06 // CONTACT & PROJECT ENQUIRIES
             </span>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 pt-2">
-            <div className="p-4 bg-white/[0.3] border border-studio-black/[0.03] flex flex-col justify-between hover:bg-white transition-all duration-300">
-              <span className="font-mono text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-2">
-                Studio Email
-              </span>
-              <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                <a href="mailto:contact@buildthematrix.com" className="hover:underline truncate">contact@buildthematrix.com</a>
-              </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end">
+            <div className="lg:col-span-12 xl:col-span-5">
+              <h2 className="font-serif text-xl sm:text-4xl lg:text-5xl tracking-tight text-studio-black leading-none uppercase">
+                Let’s Create <br />
+                <span className="italic font-normal text-gold-bronze">Exceptional Spaces Together</span>
+              </h2>
             </div>
-
-            <div className="p-4 bg-white/[0.3] border border-studio-black/[0.03] flex flex-col justify-between hover:bg-white transition-all duration-300">
-              <span className="font-mono text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-2">
-                Business Enquiries
-              </span>
-              <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                <a href="mailto:projects@buildthematrix.com" className="hover:underline truncate">projects@buildthematrix.com</a>
-              </div>
-            </div>
-
-            <div className="p-4 bg-white/[0.3] border border-studio-black/[0.03] flex flex-col justify-between hover:bg-white transition-all duration-300">
-              <span className="font-mono text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-2">
-                Collaboration Requests
-              </span>
-              <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                <a href="mailto:collab@buildthematrix.com" className="hover:underline truncate">collab@buildthematrix.com</a>
-              </div>
-            </div>
-
-            <div className="p-4 bg-white/[0.3] border border-studio-black/[0.03] flex flex-col justify-between hover:bg-white transition-all duration-300">
-              <span className="font-mono text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-2">
-                Studio Hotline
-              </span>
-              <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                <Phone className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                <a href="tel:+917505683585" className="hover:underline truncate text-glow-hover">+91 7505683585</a>
-              </div>
-            </div>
-
-            <div className="p-4 bg-white/[0.3] border border-studio-black/[0.03] flex flex-col justify-between hover:bg-white transition-all duration-300">
-              <span className="font-mono text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-2">
-                Working Hours
-              </span>
-              <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-semibold">
-                <Clock className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0 animate-spin-slow" />
-                <span>Mon – Sat | 9:00 AM – 6:00 PM</span>
-              </div>
-            </div>
+            <p className="hidden md:block lg:col-span-12 xl:col-span-7 font-sans text-xs sm:text-base text-studio-charcoal/80 font-light max-w-2xl leading-relaxed text-justify">
+              BUILD THE MATRIX collaborates on carefully curated architectural, BIM, interior, and visualization projects that demand creativity, precision, and modern design thinking. Whether you are planning a residence, commercial environment, hospitality project, or visualization concept — our studio is ready to transform your vision into reality.
+            </p>
           </div>
         </div>
 
-        {/* Master Double-column form & feasibility calculator */}
-        <div id="consultation-form" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mt-12 bg-studio-dark text-gold-light border border-white/[0.08] shadow-2xl relative">
+        {/* Flex container for reordering consultation form and contact cards on mobile view */}
+        <div className="flex flex-col">
+          {/* Master Double-column form & feasibility calculator */}
+          <div id="consultation-form" className="order-1 md:order-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-stretch mb-6 sm:mb-12 -mx-6 md:mx-0 bg-zinc-950 border-y md:border border-zinc-800 text-white shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.04)] relative">
           
           {/* Left Panel: PROJECT TYPE & PREFERRED SERVICES */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-[#1c1917] to-[#0c0a09] p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between relative">
-            <div>
-              <span className="font-mono text-[9px] tracking-[0.3em] text-[#A8A29E] uppercase block mb-2">
+          <div className="lg:col-span-5 bg-gradient-to-b from-zinc-900 to-black p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-zinc-800/80 flex flex-col justify-between relative overflow-hidden">
+            <ArchMatrixBackground particleCount={30} showGrid={true} showBuilding={false} />
+            <div className="relative z-10">
+              <span className="font-mono text-[9px] tracking-[0.3em] text-zinc-400 uppercase block mb-2">
                 PROJECT CONSULTATION FORM
               </span>
-              <h3 className="font-serif text-3xl font-light text-glow leading-tight mb-6">
+              <h3 className="font-serif text-3xl font-light text-white leading-tight mb-6">
                 Begin Your <br />
-                <span className="italic font-normal text-gold-beige">Design Journey</span>
+                <span className="italic font-normal text-zinc-300">Design Journey</span>
               </h3>
 
-              <div className="border-t border-white/[0.07] pt-6 flex flex-col gap-6">
+              <div className="border-t border-zinc-900 pt-6 flex flex-col gap-6">
                 {/* Project Type choice block */}
                 <div className="flex flex-col gap-2.5">
-                  <span className="font-mono text-[10px] text-[#A8A29E] uppercase tracking-wider block font-semibold">
+                  <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block font-semibold">
                     Project Type
                   </span>
                   <div className="grid grid-cols-2 gap-2">
@@ -173,8 +115,8 @@ export default function Contact() {
                           onClick={() => setProjectType(type)}
                           className={`py-2 px-3 border font-mono text-[9px] tracking-wider uppercase text-left transition-all duration-300 rounded-none cursor-pointer ${
                             isSelected
-                              ? "bg-gold-beige/15 border-gold-beige text-gold-beige font-semibold"
-                              : "bg-transparent border-white/[0.06] text-[#A8A29E]/65 hover:border-white/15 hover:text-white"
+                              ? "bg-white/10 border-white text-white font-semibold"
+                              : "bg-transparent border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"
                           }`}
                         >
                           {isSelected ? "✦ " : ""} {type}
@@ -186,7 +128,7 @@ export default function Contact() {
 
                 {/* Preferred Services block */}
                 <div className="flex flex-col gap-2.5 mt-2">
-                  <span className="font-mono text-[10px] text-[#A8A29E] uppercase tracking-wider block font-semibold">
+                  <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block font-semibold">
                     Preferred Services
                   </span>
                   <div className="grid grid-cols-1 gap-1.5 max-h-[220px] overflow-y-auto pr-1 select-none scrollbar-thin">
@@ -207,12 +149,12 @@ export default function Contact() {
                           onClick={() => handleServiceToggle(service)}
                           className={`py-1.5 px-3 border font-mono text-[8.5px] tracking-wider uppercase text-left transition-all duration-300 rounded-none cursor-pointer flex items-center justify-between ${
                             isSelected
-                              ? "bg-gold-beige/10 border-gold-beige/60 text-gold-beige font-semibold"
-                              : "bg-transparent border-white/[0.04] text-[#A8A29E]/60 hover:border-white/10"
+                              ? "bg-white/5 border-white/60 text-white font-semibold"
+                              : "bg-transparent border-zinc-900/40 text-zinc-500 hover:border-zinc-700/60 hover:text-white"
                           }`}
                         >
                           <span>{service}</span>
-                          <span className={`w-1.5 h-1.5 ${isSelected ? "bg-gold-beige" : "bg-white/10"}`} />
+                          <span className={`w-1.5 h-1.5 ${isSelected ? "bg-white" : "bg-white/10"}`} />
                         </button>
                       );
                     })}
@@ -221,13 +163,14 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-white/[0.05] mt-6 text-left font-mono text-[8px] text-[#7F7A75] tracking-wider uppercase">
+            <div className="pt-6 border-t border-zinc-900 mt-6 text-left font-mono text-[8px] text-zinc-500 tracking-wider uppercase relative z-10">
               STUDIO CODE // FORM CONFLICT SECURED
             </div>
           </div>
 
           {/* Right Panel: SECURE TELEMETRY FORM */}
-          <div className="lg:col-span-7 p-8 md:p-10 flex flex-col justify-between relative">
+          <div className="lg:col-span-7 bg-black p-8 md:p-10 flex flex-col justify-between relative overflow-hidden">
+            <ArchMatrixBackground particleCount={40} showGrid={true} />
             <AnimatePresence mode="wait">
               {!formSubmitted ? (
                 <motion.form
@@ -236,16 +179,16 @@ export default function Contact() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit}
-                  className="flex flex-col justify-between h-full gap-6"
+                  className="flex flex-col justify-between h-full gap-6 relative z-10"
                 >
                   <div className="flex flex-col gap-5">
-                    <span className="font-mono text-[9px] tracking-[0.3em] text-[#A8A29E] uppercase block mb-1 font-semibold">
+                    <span className="font-mono text-[9px] tracking-[0.3em] text-zinc-400 uppercase block mb-1 font-semibold">
                       CONSULTATION PARAMETERS
                     </span>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="flex flex-col gap-1.5">
-                        <label className="font-mono text-[10px] uppercase text-[#A8A29E] tracking-wider font-semibold">
+                        <label className="font-mono text-[10px] uppercase text-zinc-400 tracking-wider font-semibold">
                           Full Name
                         </label>
                         <input
@@ -254,12 +197,12 @@ export default function Contact() {
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="e.g. Kamal Nautiyal"
-                          className="w-full bg-white/[0.02] border border-white/[0.1] hover:border-white/[0.25] focus:border-gold-beige p-3 font-sans text-xs focus:outline-none focus:bg-white/[0.04] transition-all duration-300 rounded-none text-white placeholder-white/20"
+                          className="w-full bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 focus:border-white p-3 font-sans text-xs focus:outline-none focus:bg-zinc-900 transition-all duration-300 rounded-none text-white placeholder-zinc-700"
                         />
                       </div>
 
                       <div className="flex flex-col gap-1.5">
-                        <label className="font-mono text-[10px] uppercase text-[#A8A29E] tracking-wider font-semibold">
+                        <label className="font-mono text-[10px] uppercase text-zinc-400 tracking-wider font-semibold">
                           Email Address
                         </label>
                         <input
@@ -268,14 +211,14 @@ export default function Contact() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="yourname@email.com"
-                          className="w-full bg-white/[0.02] border border-white/[0.1] hover:border-white/[0.25] focus:border-gold-beige p-3 font-sans text-xs focus:outline-none focus:bg-white/[0.04] transition-all duration-300 rounded-none text-white placeholder-white/20"
+                          className="w-full bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 focus:border-white p-3 font-sans text-xs focus:outline-none focus:bg-zinc-900 transition-all duration-300 rounded-none text-white placeholder-zinc-700"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="flex flex-col gap-1.5">
-                        <label className="font-mono text-[10px] uppercase text-[#A8A29E] tracking-wider font-semibold">
+                        <label className="font-mono text-[10px] uppercase text-zinc-400 tracking-wider font-semibold">
                           Project Location
                         </label>
                         <input
@@ -284,14 +227,14 @@ export default function Contact() {
                           value={projectLocation}
                           onChange={(e) => setProjectLocation(e.target.value)}
                           placeholder="Enter city, country, or site details."
-                          className="w-full bg-white/[0.02] border border-white/[0.1] hover:border-white/[0.25] focus:border-gold-beige p-3 font-sans text-xs focus:outline-none focus:bg-white/[0.04] transition-all duration-300 rounded-none text-white placeholder-white/20"
+                          className="w-full bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 focus:border-white p-3 font-sans text-xs focus:outline-none focus:bg-zinc-900 transition-all duration-300 rounded-none text-white placeholder-zinc-700"
                         />
                       </div>
 
                       <div className="flex flex-col gap-1.5">
                         <div className="flex justify-between items-baseline font-mono text-[10px]">
-                          <span className="uppercase text-[#A8A29E] tracking-wider font-semibold">Estimated Project Area</span>
-                          <span className="font-semibold text-gold-beige">{projectArea} m²</span>
+                          <span className="uppercase text-zinc-400 tracking-wider font-semibold">Estimated Project Area</span>
+                          <span className="font-semibold text-white">{projectArea} m²</span>
                         </div>
                         <input
                           type="range"
@@ -300,9 +243,9 @@ export default function Contact() {
                           step="10"
                           value={projectArea}
                           onChange={(e) => setProjectArea(Number(e.target.value))}
-                          className="w-full h-1.5 bg-white/[0.08] rounded-none appearance-none cursor-pointer accent-gold-beige my-2"
+                          className="w-full h-1.5 bg-zinc-900 rounded-none appearance-none cursor-pointer accent-white my-2"
                         />
-                        <div className="flex justify-between text-[#7F7A75] font-mono text-[8px] uppercase">
+                        <div className="flex justify-between text-zinc-500 font-mono text-[8px] uppercase">
                           <span>e.g. 50 m² Mini-Suite</span>
                           <span>5,000 m² Master plan</span>
                         </div>
@@ -310,7 +253,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="font-mono text-[10px] uppercase text-[#A8A29E] tracking-wider font-semibold">
+                      <label className="font-mono text-[10px] uppercase text-zinc-400 tracking-wider font-semibold">
                         Project Vision & Requirements
                       </label>
                       <textarea
@@ -319,12 +262,12 @@ export default function Contact() {
                         value={projectVision}
                         onChange={(e) => setProjectVision(e.target.value)}
                         placeholder="Describe your ideas, architectural preferences, spatial goals, references, functionality needs, and visualization expectations."
-                        className="w-full bg-white/[0.02] border border-white/[0.1] hover:border-white/[0.25] focus:border-gold-beige p-3.5 font-sans text-xs focus:outline-none focus:bg-white/[0.04] transition-all duration-300 rounded-none text-white placeholder-white/20 resize-none"
+                        className="w-full bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 focus:border-white p-3.5 font-sans text-xs focus:outline-none focus:bg-zinc-900 transition-all duration-300 rounded-none text-white placeholder-zinc-700 resize-none"
                       />
                     </div>
 
                     {/* Submission dispatch */}
-                    <div className="border-t border-white/[0.08] pt-5 flex flex-col gap-4">
+                    <div className="border-t border-zinc-900 pt-5 flex flex-col gap-4">
                       {validationError && (
                         <div className="p-3 bg-rose-500/10 border border-rose-500/20 text-rose-400 font-mono text-2xs uppercase tracking-wider">
                           ⚠️ {validationError}
@@ -332,13 +275,13 @@ export default function Contact() {
                       )}
 
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-                        <span className="font-mono text-[8px] text-[#7F7A75] uppercase tracking-widest max-w-sm leading-relaxed">
+                        <span className="font-mono text-[8px] text-zinc-500 uppercase tracking-widest max-w-sm leading-relaxed">
                           DISPATCH SECURELY UNDER SSL HIGH ENCRYPT SHELLS. WE COMMIT TO SECRECY OF ALL IDEAS.
                         </span>
 
                         <button
                           type="submit"
-                          className="px-6 py-4 font-mono text-xs tracking-widest uppercase transition-all duration-500 rounded-none bg-gold-beige text-studio-black hover:bg-gold-light hover:scale-[1.02] focus:scale-95 font-bold flex items-center justify-center gap-3 cursor-pointer"
+                          className="px-6 py-4 font-mono text-xs tracking-widest uppercase transition-all duration-500 rounded-none bg-white text-zinc-950 hover:bg-zinc-200 hover:scale-[1.02] focus:scale-95 font-bold flex items-center justify-center gap-3 cursor-pointer border border-transparent hover:border-white"
                         >
                           <Sparkles className="w-4 h-4 text-inherit" />
                           Start Your Project
@@ -354,14 +297,14 @@ export default function Contact() {
                   initial={{ scale: 0.96, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex flex-col h-full justify-between items-center text-center py-16 px-6 relative"
+                  className="flex flex-col h-full justify-between items-center text-center py-16 px-6 relative z-10"
                 >
                   <div className="flex flex-col items-center gap-6 max-w-md my-auto">
                     <div className="w-14 h-14 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mb-2 animate-bounce">
                       <FileCheck className="w-7 h-7" />
                     </div>
 
-                    <h4 className="font-serif text-3xl font-light text-glow leading-none text-gold-light">
+                    <h4 className="font-serif text-3xl font-light text-glow leading-none text-white">
                       Design Journey Begun
                     </h4>
                     
@@ -369,14 +312,14 @@ export default function Contact() {
                       REGISTRATION ID: #BTM-{Math.floor(Math.random()*900000 + 100000)}
                     </p>
 
-                    <p className="font-sans text-xs text-[#A8A29E] leading-relaxed font-light">
-                      Dear <span className="text-[#E8DDCF] font-bold">{name}</span>, your project consultation dossier for the <span className="text-gold-beige">{projectType} ({projectArea} m²)</span> has been successfully filed. We have scheduled our design team to review your request. An architectural strategist will connect at <span className="text-[#E8DDCF]">{email}</span> within 24–48 hours.
+                    <p className="font-sans text-xs text-zinc-400 leading-relaxed font-light">
+                      Dear <span className="text-white font-bold">{name}</span>, your project consultation dossier for the <span className="text-zinc-300 font-semibold">{projectType} ({projectArea} m²)</span> has been successfully filed. We have scheduled our design team to review your request. An architectural strategist will connect at <span className="text-white">{email}</span> within 24–48 hours.
                     </p>
                   </div>
 
                   <button
                     onClick={resetForm}
-                    className="mt-8 px-5 py-3 border border-white/10 hover:border-gold-beige text-gold-beige hover:bg-white/[0.04] font-mono text-[9px] tracking-widest uppercase rounded-none cursor-pointer transition-all duration-300"
+                    className="mt-8 px-5 py-3 border border-zinc-800 hover:border-white text-zinc-300 hover:text-white hover:bg-white/[0.04] font-mono text-[9px] tracking-widest uppercase rounded-none cursor-pointer transition-all duration-300"
                   >
                     Register Another Project
                   </button>
@@ -386,8 +329,76 @@ export default function Contact() {
           </div>
         </div>
 
+          {/* Studio Contact Section */}
+          <div id="studio-contact" className="order-2 md:order-2 my-6 sm:my-12 p-4 sm:p-8 border border-studio-black/10 bg-white/45 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.6)] rounded-none relative overflow-hidden">
+            <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-studio-black/[0.08]">
+              <span className="font-mono text-[9px] text-[#7F7A75] uppercase block tracking-widest font-bold">
+                STUDIO CONTACT
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl text-studio-black font-semibold mt-1">
+                BUILD THE MATRIX
+              </h3>
+              <span className="font-mono text-[9px] sm:text-[10px] text-gold-bronze font-light uppercase tracking-wide block mt-0.5 sm:mt-1">
+                Architecture • BIM • Visualization • Interiors
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6 pt-2">
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Studio Email
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
+                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                  <a href="mailto:contact@buildthematrix.com" className="hover:underline truncate">contact@buildthematrix.com</a>
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Business Enquiries
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
+                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                  <a href="mailto:projects@buildthematrix.com" className="hover:underline truncate">projects@buildthematrix.com</a>
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Collaboration Requests
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
+                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                  <a href="mailto:collab@buildthematrix.com" className="hover:underline truncate">collab@buildthematrix.com</a>
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Studio Hotline
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
+                  <Phone className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                  <a href="tel:+917505683585" className="hover:underline truncate text-glow-hover">+91 7505683585</a>
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Working Hours
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-semibold">
+                  <Clock className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0 animate-spin-slow" />
+                  <span>Mon – Sat | 9:00 AM – 6:00 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 3. DESIGN CONSULTATION PROCESS */}
-        <div id="consultation-process" className="mt-28 border-t border-studio-black/[0.12] pt-20">
+        <div id="consultation-process" className="hidden sm:block mt-28 border-t border-studio-black/[0.12] pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-12 flex flex-col gap-4">
               <span className="font-mono text-[9px] tracking-[0.45em] text-gold-bronze uppercase block mb-1 font-semibold">
@@ -453,7 +464,7 @@ export default function Contact() {
                   meta: "Ensuring clarity, precision, and efficient project development."
                 }
               ].map((s, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.45] border border-studio-black/[0.06] hover:bg-white duration-300 flex flex-col justify-between min-h-[320px]">
+                <div key={idx} className="p-6 bg-white/45 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_10px_30px_rgba(15,15,15,0.01)] hover:bg-white/75 hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[320px]">
                   <div>
                     <div className="flex justify-between items-baseline border-b border-studio-black/[0.1] pb-2 mb-4">
                       <span className="font-mono text-[9px] text-[#B45309] font-bold tracking-widest">{s.step}</span>
@@ -532,7 +543,7 @@ export default function Contact() {
                   desc: "We believe successful architecture is built through clear communication, creative collaboration, and shared vision throughout the design journey."
                 }
               ].map((cov, idx) => (
-                <div key={idx} className="p-6 bg-white/45 border border-studio-black/[0.06] hover:bg-white duration-300 flex flex-col gap-3 min-h-[190px]">
+                <div key={idx} className="p-6 bg-white/45 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_10px_30px_rgba(15,15,15,0.01)] hover:bg-white/75 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col gap-3 min-h-[190px]">
                   <div className="flex justify-between items-baseline border-b border-studio-black/[0.1] pb-2 mb-2">
                     <span className="font-mono text-[9px] text-[#B45309] font-bold tracking-widest">{cov.code}</span>
                     <span className="font-mono text-[8px] text-studio-gray font-light">OUR CORE VALUE</span>
@@ -549,7 +560,7 @@ export default function Contact() {
         <div id="faq" className="mt-28 border-t border-studio-black/[0.12] pt-20 mb-12">
           <div className="max-w-3xl mb-12">
             <span className="font-mono text-[9px] tracking-[0.45em] text-gold-bronze uppercase block mb-1 font-semibold">
-              FAQ // FREQUENTLY ASKED QUESTIONS
+              #
             </span>
             <h3 className="font-serif text-3xl sm:text-4xl font-light text-studio-black">
               Studio <span className="italic font-normal text-gold-bronze">Enquiries</span>
@@ -579,7 +590,7 @@ export default function Contact() {
                 a: "Yes. We work with clients globally through online meetings, digital presentations, BIM coordination workflows, and cloud-based collaboration systems."
               }
             ].map((faq, idx) => (
-              <div key={idx} className="p-6 bg-white/30 border border-studio-black/[0.04] flex flex-col gap-2 hover:bg-white/[0.60] duration-300">
+              <div key={idx} className="p-6 bg-white/45 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_8px_24px_rgba(15,15,15,0.01)] hover:bg-white/75 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col gap-2">
                 <span className="font-mono text-[10.5px] text-[#B45309] font-bold tracking-wider uppercase block">{faq.q}</span>
                 <p className="font-sans text-xs sm:text-sm text-studio-charcoal/80 leading-relaxed font-light text-justify mt-2 pl-4 border-l border-studio-black/10">
                   {faq.a}
