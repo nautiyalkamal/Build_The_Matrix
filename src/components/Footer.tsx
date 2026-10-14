@@ -98,15 +98,21 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
         {/* Call to action header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-20 border-b border-white/10 pb-12 relative z-10">
           <div className="flex flex-col gap-3 max-w-2xl">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-amber-400 uppercase font-bold flex items-center gap-1.5 [text-shadow:0_0_8px_rgba(251,191,36,0.2)]">
+            <span 
+              style={{ fontFamily: "Georgia, serif" }}
+              className="text-[9px] tracking-[0.3em] text-amber-400 uppercase font-bold flex items-center gap-1.5 [text-shadow:0_0_8px_rgba(251,191,36,0.2)]"
+            >
               <Sparkles className="w-3.5 h-3.5" />
               # OPEN FOR COLLABORATIONS
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-glow leading-tight text-white">
+            <h3 
+              style={{ fontFamily: "Georgia, serif" }}
+              className="text-3xl sm:text-4xl md:text-5xl font-light text-glow leading-tight text-white"
+            >
               Let’s Build <span className="italic">Something Extraordinary</span> Together
             </h3>
             <p className="font-sans text-xs text-gold-sand leading-relaxed mt-2">
-              Whether it’s architecture, BIM coordination, interior design, or visualization — BUILD THE MATRIX transforms concepts into impactful spatial experiences through innovation, creativity, and precision.
+              Whether it’s architecture, BIM coordination, interior design, or visualization — BUILD THE MATRIX Pvt.  Ltd. transforms concepts into impactful spatial experiences through innovation, creativity, and precision.
             </p>
           </div>
           
@@ -127,7 +133,7 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
             <div className="hidden md:block w-3/4 max-w-[240px] overflow-hidden border border-white/15 relative group bg-black">
               <img
                 src="https://i.ibb.co/236V3sgL/file-0000000050ec7207877bc8c5fb2c374d.png"
-                alt="BUILD THE MATRIX structure view"
+                alt="BUILD THE MATRIX Pvt.  Ltd. structure view"
                 className="w-full h-auto block transition-transform duration-1000 group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
@@ -141,7 +147,7 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
               (ACKNOWLEDGEMENT)
             </span>
             <p className="font-sans text-[11px] text-zinc-100 leading-relaxed font-light text-justify">
-              At BUILD THE MATRIX, we believe architecture is a responsibility toward people, culture, environment, and future generations. We are committed to creating thoughtful spaces that respect context, celebrate design innovation, and promote sustainable architectural practices through creativity, collaboration, and conscious development.
+              At BUILD THE MATRIX Pvt.  Ltd., we believe architecture is a responsibility toward people, culture, environment, and future generations. We are committed to creating thoughtful spaces that respect context, celebrate design innovation, and promote sustainable architectural practices through creativity, collaboration, and conscious development.
             </p>
           </div>
 
@@ -151,22 +157,41 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
               (INFO)
             </span>
 
-            <div className="flex flex-col gap-3 font-mono text-[10px] text-zinc-300 leading-relaxed pl-1">
+            <div className="flex flex-col gap-3.5 font-mono text-[10px] text-zinc-300 leading-relaxed pl-1">
               <div>
-                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-0.5 font-bold">Studio Contact</span>
-                <span className="font-sans text-xs text-white"><a href="tel:+917505683585" className="hover:text-[#00E5FF] transition-colors">+91-7505683585</a></span>
+                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-1 font-bold">Studio Address</span>
+                <p className="font-sans text-xs text-white leading-relaxed">
+                  Kandoli Street No 4, Saundhon wali, Chironwali, Canal Road | Dehradun, Uttarakhand | 248013
+                </p>
               </div>
+
               <div>
-                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-0.5 font-bold">Email</span>
-                <a href="mailto:contact@buildthematrix.com" className="text-amber-400 hover:underline font-sans text-xs">contact@buildthematrix.com</a>
-              </div>
-              <div className="hidden md:block">
-                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-0.5 font-bold">Services</span>
-                <span className="font-sans text-xs text-white">Architecture • BIM • Visualization • Interiors</span>
-              </div>
-              <div>
-                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-0.5 font-bold">Working Hours</span>
-                <span className="text-white">Mon – Sat | 9:00 AM – 6:00 PM</span>
+                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-1 font-bold">Contact & Communications</span>
+                <div className="font-sans text-xs text-zinc-200 leading-relaxed space-y-1">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span>
+                      WhatsApp: <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline font-medium">7505683585</a>
+                    </span>
+                    <span className="text-zinc-600">|</span>
+                    <span>
+                      Contact: <a href="tel:+918126981337" className="text-white hover:text-[#00E5FF] transition-colors">8126981337</a>
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span>
+                      TEL: <a href="tel:01244000023" className="text-white hover:text-[#00E5FF] transition-colors">0124-4000023/24</a>
+                    </span>
+                    <span className="text-zinc-600">|</span>
+                    <span>
+                      FAX: 0124-4000035
+                    </span>
+                  </div>
+                  <div className="pt-0.5">
+                    <a href="mailto:contact@buildthematrix.com" className="text-amber-400 hover:underline">
+                      contact@buildthematrix.com
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -174,7 +199,7 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
             <div className="md:hidden flex items-stretch justify-between gap-3 bg-black border border-white/15 mt-2 w-full min-h-[64px] overflow-hidden">
               <div className="flex flex-col text-left justify-center pl-3 py-1.5 pr-1 min-w-0">
                 <span className="font-sans text-[9px] tracking-[0.08em] font-bold text-white block leading-snug uppercase">
-                  BUILD THE MATRIX
+                  BUILD THE MATRIX Pvt.  Ltd.
                 </span>
                 <span className="font-mono text-[6px] text-[#00E5FF] tracking-[0.01em] block leading-snug mt-0.5 uppercase">
                   Architecture • BIM • Visualization • Interiors
@@ -196,7 +221,7 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
         {/* copyright and legal stamp */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-zinc-400 font-mono text-[8.5px] tracking-widest uppercase relative z-10">
           <span>
-            © BUILD THE MATRIX 2026. ALL RIGHTS RESERVED.
+            © BUILD THE MATRIX Pvt.  Ltd. 2026. ALL RIGHTS RESERVED.
           </span>
           <div className="flex gap-4">
             <span className="hover:text-white cursor-pointer duration-300">PRIVACY POLICY</span>

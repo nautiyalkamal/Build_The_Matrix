@@ -153,20 +153,14 @@ export default function Home({ onNavigate }: HomeProps) {
             
             {/* Left Headline (Replicating exact video typography and alignment) */}
             <div className="lg:col-span-8 flex flex-col items-start gap-4 max-md:gap-3">
-              <motion.div 
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-white/50 uppercase"
-              >
-                <span>DESIGNING SPACES. INSPIRING LIVES.</span>
-              </motion.div>
+
 
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
-                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-sans tracking-tight leading-[1.05] font-extralight text-white"
+                style={{ fontFamily: "Georgia, serif" }}
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-['Georgia',serif] tracking-tight leading-[1.05] font-extralight text-white"
               >
                 Spaces That Echo <br />
                 <span className="font-normal text-white">Your Story</span>
@@ -256,16 +250,22 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-12 items-end mb-8 sm:mb-14 lg:mb-20">
             <div className="lg:col-span-6">
-              <span className="font-mono text-xs tracking-[0.3em] text-[#B45309] uppercase block mb-2 sm:mb-3 font-semibold">
+              <span 
+                style={{ fontFamily: "Georgia, serif" }}
+                className="text-xs tracking-[0.3em] text-[#B45309] uppercase block mb-2 sm:mb-3 font-semibold"
+              >
                 OUR IMPACT BY NUMBERS
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.08] font-sans font-extralight text-black">
+              <h2 
+                style={{ fontFamily: "Georgia, serif" }}
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.08] font-extralight text-black"
+              >
                 We Transform Vision <br />
                 <span className="font-normal">Into Built Experiences.</span>
               </h2>
             </div>
             <div className="lg:col-span-6 font-sans text-sm sm:text-base text-zinc-600 font-light leading-relaxed max-w-xl">
-              BUILD THE MATRIX delivers innovative architectural design, BIM solutions, visualization, and spatial storytelling for residential, commercial, hospitality, and urban environments. We combine creative design thinking with technical precision to create spaces that are functional, immersive, and timeless.
+              BUILD THE MATRIX Pvt.  Ltd. delivers innovative architectural design, BIM solutions, visualization, and spatial storytelling for residential, commercial, hospitality, and urban environments. We combine creative design thinking with technical precision to create spaces that are functional, immersive, and timeless.
             </div>
           </div>
 
@@ -360,10 +360,16 @@ export default function Home({ onNavigate }: HomeProps) {
         <MatrixParticles particleCount={40} showGrid={true} />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-2xl mb-8 sm:mb-12 lg:mb-16">
-            <span className="font-mono text-xs tracking-[0.3em] text-[#00E5FF] uppercase block mb-3 font-semibold [text-shadow:0_0_8px_rgba(0,229,255,0.3)]">
+            <span 
+              style={{ fontFamily: "Georgia, serif" }}
+              className="text-xs tracking-[0.3em] text-[#00E5FF] uppercase block mb-3 font-semibold [text-shadow:0_0_8px_rgba(0,229,255,0.3)]"
+            >
               ARCHITECTURE & BIM DESIGN STUDIO
             </span>
-            <h3 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide font-extralight text-white leading-tight">
+            <h3 
+              style={{ fontFamily: "Georgia, serif" }}
+              className="text-xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide font-extralight text-white leading-tight"
+            >
               Innovative Spaces. <br />
               <span className="font-normal text-white">Intelligent Design.</span>
             </h3>
@@ -439,10 +445,16 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-10 lg:gap-12 items-end mb-6 sm:mb-12 lg:mb-16">
             <div className="lg:col-span-6">
-              <span className="font-mono text-xs tracking-[0.3em] text-[#00E5FF] uppercase block mb-2 sm:mb-3 font-semibold border-l-2 border-[#00E5FF] pl-3 [text-shadow:0_0_8px_rgba(0,229,255,0.3)]">
+              <span 
+                style={{ fontFamily: "Georgia, serif" }}
+                className="text-xs tracking-[0.3em] text-[#00E5FF] uppercase block mb-2 sm:mb-3 font-semibold border-l-2 border-[#00E5FF] pl-3 [text-shadow:0_0_8px_rgba(0,229,255,0.3)]"
+              >
                 # // REPOSITORY & ARCHIVE
               </span>
-              <h3 className="text-2xl sm:text-4xl md:text-5xl font-sans font-extralight text-white leading-tight tracking-tight">
+              <h3 
+                style={{ fontFamily: "Georgia, serif" }}
+                className="text-2xl sm:text-4xl md:text-5xl font-extralight text-white leading-tight tracking-tight"
+              >
                 Precision-Driven <br />
                 <span className="font-normal text-white">Design Workflows.</span>
               </h3>
@@ -563,7 +575,7 @@ export default function Home({ onNavigate }: HomeProps) {
                       <span className="font-normal text-white">the Work.</span>
                     </h3>
                     <p className="font-sans text-xs sm:text-sm text-zinc-100 font-light leading-relaxed mb-8 max-w-sm">
-                      "Founded in 2020, BUILD THE MATRIX specializes in Architectural Design, BIM Modeling, and Visualization services for residential, commercial, and interior projects across the globe. Driven by creativity, technical precision, and collaborative design thinking."
+                      "Founded in 2020, BUILD THE MATRIX Pvt.  Ltd. specializes in Architectural Design, BIM Modeling, and Visualization services for residential, commercial, and interior projects across the globe. Driven by creativity, technical precision, and collaborative design thinking."
                     </p>
                     
                     {/* Active navigation controls */}
@@ -632,7 +644,7 @@ export default function Home({ onNavigate }: HomeProps) {
                       The Studio Behind <span className="font-normal text-[#00E5FF]">the Work.</span>
                     </h3>
                     <p className="font-sans text-[9px] xs:text-[10px] text-zinc-100 font-light leading-relaxed">
-                      Founded in 2020, BUILD THE MATRIX delivers precise, innovative architectural design, BIM workflows, and visual experiences globally.
+                      Founded in 2020, BUILD THE MATRIX Pvt.  Ltd. delivers precise, innovative architectural design, BIM workflows, and visual experiences globally.
                     </p>
                   </div>
                   

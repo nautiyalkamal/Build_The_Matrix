@@ -319,6 +319,9 @@ export default function Preloader({ onComplete }: PreloaderProps) {
               MATRIX
               <span className="absolute -bottom-1.5 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#00E5FF]/50 to-transparent shadow-[0_0_8px_#00E5FF]" />
             </span>
+            <span className="block text-[10px] sm:text-xs font-mono tracking-[0.35em] text-zinc-400 mt-2 font-normal uppercase">
+              Pvt.  Ltd.
+            </span>
           </motion.h1>
         </div>
       </div>

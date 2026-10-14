@@ -145,7 +145,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       location: "Ibiza, Spain",
       camera: "Visualization Studio",
       settings: "Luxury Residential Concept",
-      photographer: "BUILD THE MATRIX",
+      photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
       description: "Contemporary architectural composition exploring clean geometries, natural textures, soft daylight integration, and modern minimal spatial language."
     },
@@ -156,7 +156,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       location: "Kyoto, Japan",
       camera: "Revit + Lumion Workflow",
       settings: "Architectural Coordination Lab",
-      photographer: "BUILD THE MATRIX",
+      photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop",
       description: "A cinematic architectural workflow presentation showcasing Revit coordination, technical detailing, parametric systems, and collaborative BIM execution processes."
     },
@@ -167,7 +167,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       location: "Reykjavik, Iceland",
       camera: "Interior Visualization Studio",
       settings: "Modern Hospitality Concept",
-      photographer: "BUILD THE MATRIX",
+      photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop",
       description: "An elegant interior visualization focused on warm lighting, refined materials, soft textures, and immersive spatial experiences inspired by contemporary luxury living."
     },
@@ -178,7 +178,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       location: "Amalfi, Italy",
       camera: "Commercial Architecture Division",
       settings: "Retail & Workspace Concepts",
-      photographer: "BUILD THE MATRIX",
+      photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop",
       description: "A premium commercial environment designed with intelligent circulation planning, atmospheric lighting, modern branding elements, and functional spatial interaction."
     },
@@ -189,7 +189,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       location: "Oslo, Norway",
       camera: "Cinematic Rendering Lab",
       settings: "Exterior Visualization Study",
-      photographer: "BUILD THE MATRIX",
+      photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1000&auto=format&fit=crop",
       description: "A cinematic exterior visualization combining environmental realism, natural lighting simulations, reflective materials, and modern architectural storytelling."
     },
@@ -200,7 +200,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       location: "Amangiri, USA",
       camera: "Urban Design Studio",
       settings: "High-Rise Living Concept",
-      photographer: "BUILD THE MATRIX",
+      photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop",
       description: "An architectural concept focused on urban living, façade rhythm, structural balance, and contemporary luxury aesthetics."
     }
@@ -586,7 +586,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
                 The Theory of <span className="italic font-normal text-gold-beige block mt-1">Spatial Honesty</span>
               </h3>
               <p className="font-sans text-xs sm:text-sm text-gold-sand/85 leading-relaxed font-light mt-3 text-justify">
-                At BUILD THE MATRIX, we reject standard digital HDR architectural photography, which artificially amplifies ambient shadows to remove the deep natural contrast of raw materials. We believe space must be documented with absolute honesty. Therefore, we shoot exclusively on analog silver halide large-format film.
+                At BUILD THE MATRIX Pvt.  Ltd., we reject standard digital HDR architectural photography, which artificially amplifies ambient shadows to remove the deep natural contrast of raw materials. We believe space must be documented with absolute honesty. Therefore, we shoot exclusively on analog silver halide large-format film.
               </p>
             </div>
 
@@ -653,7 +653,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
                 <span className="italic font-normal text-gold-beige text-glow">Workflow Systems</span>
               </h3>
               <p className="font-sans text-xs sm:text-sm text-gold-sand/85 leading-relaxed font-light text-justify">
-                Explore the digital process behind BUILD THE MATRIX projects through integrated architectural technologies and advanced visualization pipelines.
+                Explore the digital process behind BUILD THE MATRIX Pvt.  Ltd. projects through integrated architectural technologies and advanced visualization pipelines.
               </p>
 
               {/* Film simulator controller */}

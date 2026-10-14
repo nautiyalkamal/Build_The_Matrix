@@ -51,21 +51,21 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          {/* Logo / Title Area - BUILD THE MATRIX */}
+          {/* Logo / Title Area - BUILD THE MATRIX Pvt.  Ltd. */}
           <button
             onClick={() => handleNavClick("home")}
-            className="flex flex-col items-start cursor-pointer text-left group gap-0.5 pointer-events-auto"
+            className="flex flex-col items-start cursor-pointer text-left group gap-0.5 pointer-events-auto shrink-0"
           >
-            <span className={`font-sans text-base tracking-[0.25em] font-bold leading-none transition-colors duration-300 ${
+            <span className={`font-sans text-base whitespace-nowrap tracking-[0.14em] sm:tracking-[0.2em] md:tracking-[0.25em] font-bold leading-none transition-colors duration-300 ${
               isLightPage ? "text-studio-black hover:text-studio-black/80" : "text-white hover:text-white/80"
             }`}>
-              BUILD THE MATRIX
+              BUILD THE MATRIX Pvt.  Ltd.
             </span>
-            <span className={`font-mono text-[8px] tracking-[0.35em] font-light uppercase leading-normal sm:leading-none mt-2 ${
+            <span className={`font-mono text-[8px] tracking-[0.22em] sm:tracking-[0.35em] font-light uppercase whitespace-nowrap leading-none mt-2 ${
               isLightPage ? "text-studio-black/55" : "text-white/45"
             }`}>
-              <span className="block sm:inline">BUILDING EXCELLENCE.{" "}</span>
-              <span className="block sm:inline">CREATING LEGACIES.</span>
+              <span className="inline whitespace-nowrap">BUILDING EXCELLENCE.{" "}</span>
+              <span className="inline whitespace-nowrap">CREATING LEGACIES.</span>
             </span>
           </button>
 
@@ -210,39 +210,55 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
             </ul>
 
             {/* Bottom Info Cards / Socials */}
-            <div className={`border-t pt-5 sm:pt-8 flex flex-col gap-3 sm:gap-4 font-mono text-xs uppercase pl-2 sm:pl-4 mt-auto ${
-              isLightPage ? "border-studio-black/[0.08]" : "border-white/[0.04]"
+            <div className={`border-t pt-4 sm:pt-6 flex flex-col gap-2.5 sm:gap-3.5 font-mono text-xs pl-2 sm:pl-4 mt-auto ${
+              isLightPage ? "border-studio-black/[0.08]" : "border-white/[0.08]"
             }`}>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <span className="text-[9px] sm:text-[10px] text-studio-gray tracking-wider block mb-1">
-                    Direct Correspondence
+              <div>
+                <span className={`text-[8px] sm:text-[9px] uppercase tracking-wider block mb-1 font-semibold ${
+                  isLightPage ? "text-studio-black/50" : "text-white/40"
+                }`}>
+                  Studio Address
+                </span>
+                <p className={`font-sans text-[11px] sm:text-xs leading-relaxed ${
+                  isLightPage ? "text-studio-black" : "text-zinc-200"
+                }`}>
+                  Kandoli Street No 4, Saundhon wali, Chironwali, Canal Road | Dehradun, Uttarakhand | 248013
+                </p>
+              </div>
+
+              <div className={`font-sans text-[10.5px] sm:text-xs leading-relaxed space-y-1 ${
+                isLightPage ? "text-studio-black" : "text-zinc-300"
+              }`}>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                  <span>
+                    WhatsApp: <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline font-medium">7505683585</a>
                   </span>
-                  <a
-                    href="mailto:contact@leftcoastdesignstudio.com"
-                    className={`duration-300 text-[10px] sm:text-xs block truncate ${
-                      isLightPage ? "text-studio-black hover:text-studio-black/70" : "text-gold-beige hover:text-gold-light"
-                    }`}
-                  >
-                    contact@leftcoastdesignstudio.com
-                  </a>
+                  <span className="text-zinc-500">|</span>
+                  <span>
+                    Contact: <a href="tel:+918126981337" className="hover:underline font-medium">8126981337</a>
+                  </span>
                 </div>
-                <div>
-                  <span className="text-[9px] sm:text-[10px] text-studio-gray tracking-wider block mb-1">
-                    Social Presences
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                  <span>
+                    TEL: <a href="tel:01244000023" className="hover:underline">0124-4000023/24</a>
                   </span>
-                  <div className={`flex gap-3 text-[10px] sm:text-xs ${
-                    isLightPage ? "text-studio-black" : "text-gold-light"
-                  }`}>
-                    <span className="hover:opacity-75 duration-300 cursor-pointer">IG</span>
-                    <span className="text-studio-gray">•</span>
-                    <span className="hover:opacity-75 duration-300 cursor-pointer">LN</span>
-                  </div>
+                  <span className="text-zinc-500">|</span>
+                  <span>
+                    FAX: 0124-4000035
+                  </span>
+                  <span className="text-zinc-500">|</span>
+                  <span>
+                    <a href="mailto:contact@buildthematrix.com" className="text-amber-400 hover:underline font-medium">
+                      contact@buildthematrix.com
+                    </a>
+                  </span>
                 </div>
               </div>
 
-              <div className="text-[8px] sm:text-[9px] text-studio-gray tracking-widest mt-2 sm:mt-4">
-                © BUILD THE MATRIX LLC 2026. ALL LAND LANDMARKS RESPECTED.
+              <div className={`text-[8px] sm:text-[9px] tracking-widest mt-1 uppercase ${
+                isLightPage ? "text-studio-black/40" : "text-zinc-500"
+              }`}>
+                © BUILD THE MATRIX Pvt.  Ltd. 2026. ALL RIGHTS RESERVED.
               </div>
             </div>
           </motion.div>

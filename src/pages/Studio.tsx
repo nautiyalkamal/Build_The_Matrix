@@ -132,7 +132,7 @@ export default function Studio() {
       id: "member-1",
       name: "Kamal Nautiyal",
       role: "Founder / Principal Architect",
-      bio: "leads BUILD THE MATRIX with a vision centered around modern architecture, intelligent BIM systems, and immersive design storytelling. His approach combines creativity, technical detailing, and cinematic spatial experiences to craft architecture that feels both functional and emotionally engaging.",
+      bio: "leads BUILD THE MATRIX Pvt.  Ltd. with a vision centered around modern architecture, intelligent BIM systems, and immersive design storytelling. His approach combines creativity, technical detailing, and cinematic spatial experiences to craft architecture that feels both functional and emotionally engaging.",
       imageUrl: "https://i.ibb.co/fY3yy94y/new.jpg",
       quote: "Architecture is not just about structures — it is about creating experiences people remember.",
       specialities: [
@@ -285,7 +285,7 @@ export default function Studio() {
           {/* Middle: Studio Core Statement & Philosophy */}
           <div className="lg:col-span-4 font-sans text-sm sm:text-base text-studio-charcoal/80 font-light leading-relaxed flex flex-col justify-center">
             <p className="mb-4 text-xs sm:text-sm">
-              BUILD THE MATRIX is a contemporary architectural and BIM design studio focused on creating immersive, functional, and visually timeless spaces. Our practice combines architecture, interior design, BIM coordination, and cinematic visualization to deliver projects that balance creativity with technical precision.
+              BUILD THE MATRIX Pvt.  Ltd. is a contemporary architectural and BIM design studio focused on creating immersive, functional, and visually timeless spaces. Our practice combines architecture, interior design, BIM coordination, and cinematic visualization to deliver projects that balance creativity with technical precision.
             </p>
             <p className="mb-4 text-xs sm:text-sm">
               We collaborate with homeowners, developers, and brands to transform ideas into modern spatial experiences through innovative and detail-driven execution.
@@ -333,7 +333,7 @@ export default function Studio() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 items-stretch border-t border-b border-studio-black/[0.12] py-6 sm:py-12 mb-10 sm:mb-20">
           {[
             { metric: "250+ M²", title: "Active BIM & Architectural Design Development", sub: "Residential, commercial, and visualization projects in progress." },
-            { metric: "Est. 2026", title: "Founded With A Vision For Modern Spatial Innovation", sub: "Built on creativity, technology, and architectural excellence." },
+            { metric: "Est. 2020", title: "Founded With A Vision For Modern Spatial Innovation", sub: "Built on creativity, technology, and architectural excellence." },
             { metric: "BIM Integrated", title: "Advanced Revit & Visualization Workflow", sub: "Smart coordination systems for accurate and efficient project execution." },
           ].map((stat, idx) => (
             <div key={idx} className="flex flex-col gap-2 justify-between p-3 sm:p-4 bg-white/45 backdrop-blur-md border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_8px_24px_rgba(15,15,15,0.02)] hover:bg-white/70 duration-300">
@@ -372,7 +372,7 @@ export default function Studio() {
               # // TEAM ARCHITECT DIRECTORY
             </span>
             <h3 className="font-serif text-xl font-light text-studio-black leading-tight">
-              Meet The Creative Minds Behind <span className="italic">BUILD THE MATRIX</span>
+              Meet The Creative Minds Behind <span className="italic">BUILD THE MATRIX Pvt.  Ltd.</span>
             </h3>
           </div>
 
@@ -383,7 +383,7 @@ export default function Studio() {
                 # // TEAM ARCHITECT DIRECTORY
               </span>
               <h3 className="font-serif text-3xl font-light text-studio-black lg:tracking-wide">
-                Meet The Creative Minds Behind <span className="italic">BUILD THE MATRIX</span>
+                Meet The Creative Minds Behind <span className="italic">BUILD THE MATRIX Pvt.  Ltd.</span>
               </h3>
             </div>
           </div>
@@ -635,7 +635,7 @@ export default function Studio() {
           </div>
         </div>
 
-        {/* 3. Deep Dive: BUILD THE MATRIX Creative Workspace */}
+        {/* 3. Deep Dive: BUILD THE MATRIX Pvt.  Ltd. Creative Workspace */}
         {/* DESKTOP WORKSPACE LAYOUT (Unmodified for large views) */}
         <div className="hidden md:block mt-28 border-t border-white/10 pt-20">
           <span className="font-mono text-[10px] tracking-[0.4em] text-gold-bronze uppercase block mb-3 font-semibold">
@@ -644,7 +644,7 @@ export default function Studio() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 flex flex-col gap-6">
               <h3 className="font-serif text-3xl sm:text-4xl font-light text-white leading-tight">
-                BUILD THE MATRIX <br />
+                BUILD THE MATRIX Pvt.  Ltd. <br />
                 <span className="italic font-normal text-gold-bronze">Creative Workspace</span>
               </h3>
               <p className="font-sans text-xs sm:text-sm text-zinc-300 leading-relaxed font-light text-justify">
@@ -744,7 +744,7 @@ export default function Studio() {
             </span>
 
             <h3 className="font-serif text-xl font-light text-white leading-tight mb-3 tracking-wide">
-              BUILD THE MATRIX <br />
+              BUILD THE MATRIX Pvt.  Ltd. <br />
               <span className="italic font-normal text-white">Creative Workspace</span>
             </h3>
 

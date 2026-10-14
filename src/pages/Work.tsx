@@ -72,7 +72,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
       year: "2025",
       category: "BIM & VISUALIZATION",
       description: "A detailed BIM coordination and visualization project developed using advanced Revit workflows, clash detection systems, construction documentation, and photorealistic rendering pipelines.",
-      imageUrl: "https://i.ibb.co/Kz7ybJGH/1774899600691-2.jpg",
+      imageUrl: "https://i.ibb.co/8gyhrx4g/file-000000006350720b9fbe0a9ce256a769.png",
       client: "High-Rise BIM Coordination",
       scale: "18,500 m² GFA",
       materials: ["BIM-Based Coordination", "Parametric Facade Systems", "Smart Structural Modeling"],
@@ -89,7 +89,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
       year: "2024",
       category: "INTERIOR DESIGN",
       description: "An immersive hospitality interior designed with ambient lighting, warm textures, bespoke seating layouts, and refined material combinations to create an elegant social environment.",
-      imageUrl: pavilionImage,
+      imageUrl: "https://i.ibb.co/mC4NrjvQ/2.jpg",
       client: "Luxury Hospitality Lounge",
       scale: "320 m² GFA",
       materials: ["Walnut Veneer Finishes", "Ambient Lighting Design", "Brushed Brass Details"],
@@ -163,10 +163,16 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
         {/* Page title section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 md:gap-8 mb-8 sm:mb-10 lg:mb-12">
           <div>
-            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.4em] text-[#00E5FF] uppercase block mb-1.5 font-semibold">
+            <span 
+              style={{ fontFamily: "Georgia, serif" }}
+              className="text-[9px] sm:text-[10px] tracking-[0.4em] text-[#00E5FF] uppercase block mb-1.5 font-semibold"
+            >
               03 // PROJECT DIRECTORY
             </span>
-            <h2 className="text-xl sm:text-3xl lg:text-4xl tracking-tight text-white font-extralight leading-none">
+            <h2 
+              style={{ fontFamily: "Georgia, serif" }}
+              className="text-xl sm:text-3xl lg:text-4xl tracking-tight text-white font-extralight leading-none"
+            >
               Featured <span className="font-normal">Architectural & BIM Works</span>
             </h2>
           </div>
@@ -236,11 +242,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className={`w-full h-full transition-transform duration-1000 ${
-                      project.id === "project-3"
-                        ? "object-cover scale-[1.2] group-hover:scale-[1.25]"
-                        : "object-cover group-hover:scale-102"
-                    }`}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -356,11 +358,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                       <img
                         src={selectedProject.imageUrl}
                         alt={selectedProject.title}
-                        className={`w-full h-full ${
-                          selectedProject.id === "project-3"
-                            ? "object-cover scale-[1.2]"
-                            : "object-cover"
-                        }`}
+                        className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
                       />
                     </div>
@@ -432,7 +430,7 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
                 {/* 3. STICKY FOOTER WITH QUICK ACTION */}
                 <div className="flex-none border-t border-white/[0.08] p-5 sm:px-8 sm:py-6 md:px-12 bg-zinc-950 flex justify-between items-center text-white/40 text-[7.5px] tracking-widest z-20">
                   <div className="flex flex-col">
-                    <span>BUILD THE MATRIX ARCHITECTURAL ALLIANCE</span>
+                    <span>BUILD THE MATRIX Pvt.  Ltd. ARCHITECTURAL ALLIANCE</span>
                     <span className="mt-1 opacity-70">SAN FRANCISCO // SAN JOSE // MILAN // LONDON</span>
                   </div>
                   <span className="font-mono text-[8px] tracking-wider border border-white/10 px-2.5 py-1 text-white/40">
@@ -448,16 +446,22 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
         <div className="mt-28 border-t border-white/[0.08] pt-20">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
             <div className="flex flex-col gap-2">
-              <span className="font-mono text-[9px] tracking-[0.45em] text-white/40 uppercase font-bold">
+              <span 
+                style={{ fontFamily: "Georgia, serif" }}
+                className="text-[9px] tracking-[0.45em] text-white/40 uppercase font-bold"
+              >
                 PERFORMANCE & DESIGN MATRIX
               </span>
-              <h3 className="text-3xl sm:text-4xl font-sans font-extralight text-white leading-tight">
+              <h3 
+                style={{ fontFamily: "Georgia, serif" }}
+                className="text-3xl sm:text-4xl font-extralight text-white leading-tight"
+              >
                 Intelligent Architectural <br />
                 <span className="font-normal text-white">Systems</span>
               </h3>
             </div>
             <p className="font-sans text-xs sm:text-sm text-white/60 max-w-sm font-light leading-relaxed">
-              Every BUILD THE MATRIX project is developed through advanced architectural workflows, BIM precision standards, and visual optimization strategies to ensure performance, sustainability, and timeless aesthetics.
+              Every BUILD THE MATRIX Pvt.  Ltd. project is developed through advanced architectural workflows, BIM precision standards, and visual optimization strategies to ensure performance, sustainability, and timeless aesthetics.
             </p>
           </div>
 

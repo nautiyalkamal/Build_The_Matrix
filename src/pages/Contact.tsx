@@ -6,22 +6,13 @@ import ArchMatrixBackground from "../components/ArchMatrixBackground";
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [projectArea, setProjectArea] = useState(450); // Default to 450 m²
-  const [projectType, setProjectType] = useState("Residential Architecture");
-  const [preferredServices, setPreferredServices] = useState<string[]>(["Concept Design", "3D Rendering"]);
+  const [projectType, setProjectType] = useState("Architectural & BIM Project");
   
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [projectLocation, setProjectLocation] = useState("");
   const [projectVision, setProjectVision] = useState("");
   const [validationError, setValidationError] = useState<string | null>(null);
-
-  const handleServiceToggle = (service: string) => {
-    if (preferredServices.includes(service)) {
-      setPreferredServices(preferredServices.filter(s => s !== service));
-    } else {
-      setPreferredServices([...preferredServices, service]);
-    }
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,8 +32,7 @@ export default function Contact() {
     setProjectLocation("");
     setProjectVision("");
     setProjectArea(450);
-    setProjectType("Residential Architecture");
-    setPreferredServices(["Concept Design", "3D Rendering"]);
+    setProjectType("Architectural & BIM Project");
   };
 
   return (
@@ -70,106 +60,91 @@ export default function Contact() {
               </h2>
             </div>
             <p className="hidden md:block lg:col-span-12 xl:col-span-7 font-sans text-xs sm:text-base text-studio-charcoal/80 font-light max-w-2xl leading-relaxed text-justify">
-              BUILD THE MATRIX collaborates on carefully curated architectural, BIM, interior, and visualization projects that demand creativity, precision, and modern design thinking. Whether you are planning a residence, commercial environment, hospitality project, or visualization concept — our studio is ready to transform your vision into reality.
+              BUILD THE MATRIX Pvt.  Ltd. collaborates on carefully curated architectural, BIM, interior, and visualization projects that demand creativity, precision, and modern design thinking. Whether you are planning a residence, commercial environment, hospitality project, or visualization concept — our studio is ready to transform your vision into reality.
             </p>
           </div>
         </div>
 
-        {/* Flex container for reordering consultation form and contact cards on mobile view */}
+        {/* Flex container for reordering consultation form and contact cards */}
         <div className="flex flex-col">
-          {/* Master Double-column form & feasibility calculator */}
-          <div id="consultation-form" className="order-1 md:order-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-stretch mb-6 sm:mb-12 -mx-6 md:mx-0 bg-zinc-950 border-y md:border border-zinc-800 text-white shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.04)] relative">
-          
-          {/* Left Panel: PROJECT TYPE & PREFERRED SERVICES */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-zinc-900 to-black p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-zinc-800/80 flex flex-col justify-between relative overflow-hidden">
-            <ArchMatrixBackground particleCount={30} showGrid={true} showBuilding={false} />
-            <div className="relative z-10">
-              <span className="font-mono text-[9px] tracking-[0.3em] text-zinc-400 uppercase block mb-2">
-                PROJECT CONSULTATION FORM
+          {/* Studio Contact Section */}
+          <div id="studio-contact" className="order-1 mb-6 sm:mb-12 p-4 sm:p-8 border border-studio-black/10 bg-white/45 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.6)] rounded-none relative overflow-hidden">
+            <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-studio-black/[0.08]">
+              <span className="font-mono text-[9px] text-[#7F7A75] uppercase block tracking-widest font-bold">
+                STUDIO CONTACT
               </span>
-              <h3 className="font-serif text-3xl font-light text-white leading-tight mb-6">
-                Begin Your <br />
-                <span className="italic font-normal text-zinc-300">Design Journey</span>
+              <h3 className="font-serif text-xl sm:text-2xl text-studio-black font-semibold mt-1">
+                BUILD THE MATRIX Pvt.  Ltd.
               </h3>
+              <span className="font-mono text-[9px] sm:text-[10px] text-gold-bronze font-light uppercase tracking-wide block mt-0.5 sm:mt-1">
+                Architecture • BIM • Visualization • Interiors
+              </span>
+              <p className="font-sans text-xs text-studio-charcoal mt-1.5 font-normal">
+                Kandoli Street No 4, Saundhon wali, Chironwali, Canal Road | Dehradun, Uttarakhand | 248013
+              </p>
+            </div>
 
-              <div className="border-t border-zinc-900 pt-6 flex flex-col gap-6">
-                {/* Project Type choice block */}
-                <div className="flex flex-col gap-2.5">
-                  <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block font-semibold">
-                    Project Type
-                  </span>
-                  <div className="grid grid-cols-2 gap-2">
-                    {[
-                      "Residential Architecture",
-                      "Commercial Design",
-                      "Interior Design",
-                      "BIM Coordination",
-                      "3D Visualization",
-                      "Landscape Design"
-                    ].map((type) => {
-                      const isSelected = projectType === type;
-                      return (
-                        <button
-                          type="button"
-                          key={type}
-                          onClick={() => setProjectType(type)}
-                          className={`py-2 px-3 border font-mono text-[9px] tracking-wider uppercase text-left transition-all duration-300 rounded-none cursor-pointer ${
-                            isSelected
-                              ? "bg-white/10 border-white text-white font-semibold"
-                              : "bg-transparent border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"
-                          }`}
-                        >
-                          {isSelected ? "✦ " : ""} {type}
-                        </button>
-                      );
-                    })}
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6 pt-2">
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Studio Email
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
+                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                  <a href="mailto:contact@buildthematrix.com" className="hover:underline truncate">contact@buildthematrix.com</a>
                 </div>
+              </div>
 
-                {/* Preferred Services block */}
-                <div className="flex flex-col gap-2.5 mt-2">
-                  <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block font-semibold">
-                    Preferred Services
-                  </span>
-                  <div className="grid grid-cols-1 gap-1.5 max-h-[220px] overflow-y-auto pr-1 select-none scrollbar-thin">
-                    {[
-                      "Concept Design",
-                      "BIM Modeling",
-                      "Revit Documentation",
-                      "3D Rendering",
-                      "Walkthrough Animation",
-                      "Interior Styling",
-                      "Construction Drawings"
-                    ].map((service) => {
-                      const isSelected = preferredServices.includes(service);
-                      return (
-                        <button
-                          type="button"
-                          key={service}
-                          onClick={() => handleServiceToggle(service)}
-                          className={`py-1.5 px-3 border font-mono text-[8.5px] tracking-wider uppercase text-left transition-all duration-300 rounded-none cursor-pointer flex items-center justify-between ${
-                            isSelected
-                              ? "bg-white/5 border-white/60 text-white font-semibold"
-                              : "bg-transparent border-zinc-900/40 text-zinc-500 hover:border-zinc-700/60 hover:text-white"
-                          }`}
-                        >
-                          <span>{service}</span>
-                          <span className={`w-1.5 h-1.5 ${isSelected ? "bg-white" : "bg-white/10"}`} />
-                        </button>
-                      );
-                    })}
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Business Enquiries
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
+                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                  <a href="mailto:projects@buildthematrix.com" className="hover:underline truncate">projects@buildthematrix.com</a>
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Collaboration Requests
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
+                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                  <a href="mailto:collab@buildthematrix.com" className="hover:underline truncate">collab@buildthematrix.com</a>
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Studio Hotline & Lines
+                </span>
+                <div className="flex flex-col gap-1 text-xs font-sans text-studio-black font-medium">
+                  <div className="text-[10px] text-[#7F7A75] font-mono">
+                    WA: <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className="hover:underline text-emerald-700">7505683585</a> | TEL: 0124-4000023/24
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
+                    <a href="tel:+918126981337" className="hover:underline truncate text-glow-hover">+91 8126981337</a>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="pt-6 border-t border-zinc-900 mt-6 text-left font-mono text-[8px] text-zinc-500 tracking-wider uppercase relative z-10">
-              STUDIO CODE // FORM CONFLICT SECURED
+              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
+                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
+                  Working Hours
+                </span>
+                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-semibold">
+                  <Clock className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0 animate-spin-slow" />
+                  <span>Mon – Sat | 9:00 AM – 6:00 PM</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Panel: SECURE TELEMETRY FORM */}
-          <div className="lg:col-span-7 bg-black p-8 md:p-10 flex flex-col justify-between relative overflow-hidden">
+          {/* Consultation form */}
+          <div id="consultation-form" className="order-2 mb-6 sm:mb-12 -mx-6 md:mx-0 bg-zinc-950 border-y md:border border-zinc-800 text-white shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.04)] relative overflow-hidden">
+            <div className="bg-black p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <ArchMatrixBackground particleCount={40} showGrid={true} />
             <AnimatePresence mode="wait">
               {!formSubmitted ? (
@@ -182,9 +157,14 @@ export default function Contact() {
                   className="flex flex-col justify-between h-full gap-6 relative z-10"
                 >
                   <div className="flex flex-col gap-5">
-                    <span className="font-mono text-[9px] tracking-[0.3em] text-zinc-400 uppercase block mb-1 font-semibold">
-                      CONSULTATION PARAMETERS
-                    </span>
+                    <div className="pb-2 border-b border-zinc-900">
+                      <span className="font-mono text-[9px] tracking-[0.3em] text-zinc-400 uppercase block mb-1 font-semibold">
+                        PROJECT CONSULTATION // DIRECTORY INTAKE
+                      </span>
+                      <h3 className="font-serif text-2xl sm:text-3xl font-light text-white leading-tight">
+                        Begin Your <span className="italic font-normal text-zinc-300">Design Journey</span>
+                      </h3>
+                    </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="flex flex-col gap-1.5">
@@ -328,74 +308,7 @@ export default function Contact() {
             </AnimatePresence>
           </div>
         </div>
-
-          {/* Studio Contact Section */}
-          <div id="studio-contact" className="order-2 md:order-2 my-6 sm:my-12 p-4 sm:p-8 border border-studio-black/10 bg-white/45 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.6)] rounded-none relative overflow-hidden">
-            <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-studio-black/[0.08]">
-              <span className="font-mono text-[9px] text-[#7F7A75] uppercase block tracking-widest font-bold">
-                STUDIO CONTACT
-              </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-studio-black font-semibold mt-1">
-                BUILD THE MATRIX
-              </h3>
-              <span className="font-mono text-[9px] sm:text-[10px] text-gold-bronze font-light uppercase tracking-wide block mt-0.5 sm:mt-1">
-                Architecture • BIM • Visualization • Interiors
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6 pt-2">
-              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
-                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
-                  Studio Email
-                </span>
-                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                  <a href="mailto:contact@buildthematrix.com" className="hover:underline truncate">contact@buildthematrix.com</a>
-                </div>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
-                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
-                  Business Enquiries
-                </span>
-                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                  <a href="mailto:projects@buildthematrix.com" className="hover:underline truncate">projects@buildthematrix.com</a>
-                </div>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
-                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
-                  Collaboration Requests
-                </span>
-                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                  <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                  <a href="mailto:collab@buildthematrix.com" className="hover:underline truncate">collab@buildthematrix.com</a>
-                </div>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
-                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
-                  Studio Hotline
-                </span>
-                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
-                  <Phone className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                  <a href="tel:+917505683585" className="hover:underline truncate text-glow-hover">+91 7505683585</a>
-                </div>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
-                <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
-                  Working Hours
-                </span>
-                <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-semibold">
-                  <Clock className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0 animate-spin-slow" />
-                  <span>Mon – Sat | 9:00 AM – 6:00 PM</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
         {/* 3. DESIGN CONSULTATION PROCESS */}
         <div id="consultation-process" className="hidden sm:block mt-28 border-t border-studio-black/[0.12] pt-20">
@@ -497,7 +410,7 @@ export default function Contact() {
                 DESIGN PRINCIPLES & STUDIO VALUES
               </span>
               <h3 className="font-serif text-3xl sm:text-4xl font-light text-studio-black leading-tight">
-                The BUILD THE MATRIX <br />
+                The BUILD THE MATRIX Pvt.  Ltd. <br />
                 <span className="italic font-normal text-gold-bronze">Philosophy</span>
               </h3>
               <p className="font-sans text-xs sm:text-sm text-studio-charcoal/85 leading-relaxed font-light text-justify">
@@ -571,7 +484,7 @@ export default function Contact() {
             {[
               {
                 q: "Q1 // Do you provide BIM and Revit services separately?",
-                a: "Yes. BUILD THE MATRIX offers dedicated BIM coordination, Revit modeling, technical documentation, and visualization services for architecture firms, consultants, and developers."
+                a: "Yes. BUILD THE MATRIX Pvt.  Ltd. offers dedicated BIM coordination, Revit modeling, technical documentation, and visualization services for architecture firms, consultants, and developers."
               },
               {
                 q: "Q2 // Can you create photorealistic architectural renders and walkthroughs?",

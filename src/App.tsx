@@ -19,8 +19,7 @@ import Contact from "./pages/Contact";
 import HERO_VILLA_URL from "./assets/images/hero_villa_1779679999241.png";
 // @ts-ignore
 import INTERIOR_LIVING_URL from "./assets/images/interior_living_1779680017247.png";
-// @ts-ignore
-import FOREST_PAVILION_URL from "./assets/images/forest_pavilion_1779680035772.png";
+const FOREST_PAVILION_URL = "https://i.ibb.co/mC4NrjvQ/2.jpg";
 const EXTERIOR_FACADE_URL = "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200";
 
 export default function App() {
