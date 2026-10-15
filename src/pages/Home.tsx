@@ -60,16 +60,6 @@ export default function Home({ onNavigate }: HomeProps) {
 
   const [currentSlideIdx, setCurrentSlideIdx] = useState(0);
   const [activeTouchCard, setActiveTouchCard] = useState<number | null>(null);
-  const [isLeaderImageGlowing, setIsLeaderImageGlowing] = useState(false);
-
-  useEffect(() => {
-    if (isLeaderImageGlowing) {
-      const timer = setTimeout(() => {
-        setIsLeaderImageGlowing(false);
-      }, 2200);
-      return () => clearTimeout(timer);
-    }
-  }, [isLeaderImageGlowing]);
 
   // Touch gesture state and handlers for mobile/tablet slideshow swiping
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
@@ -127,40 +117,39 @@ export default function Home({ onNavigate }: HomeProps) {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         data-no-swipe="true"
-        className="relative h-[85vh] sm:h-[90vh] lg:h-screen max-md:h-[95vh] w-full flex items-center overflow-hidden bg-black select-none cursor-grab active:cursor-grabbing"
+        className="relative h-[85vh] sm:h-[90vh] lg:h-screen max-md:h-screen max-md:min-h-screen w-full flex items-center overflow-hidden bg-black select-none cursor-grab active:cursor-grabbing"
       >
         
-        {/* Fullscreen rotative slide backgrounds with motion transitions under adaptive mobile aspect ratios */}
+        {/* Fullscreen rotative slide backgrounds - positioned below header to not cover 1st portion, and spanning to cover 2nd portion completely on mobile */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide.id}
             initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.7, scale: 1 }}
+            animate={{ opacity: 0.85, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.4, ease: "easeInOut" }}
-            className="absolute inset-0 md:inset-0 z-0 bg-cover bg-center max-md:w-[92%] max-md:h-[38vh] max-md:left-[4%] max-md:top-36 max-md:rounded-lg max-md:border max-md:border-white/10 max-md:shadow-2xl"
+            className="absolute inset-0 md:inset-0 z-0 bg-cover bg-center max-md:w-full max-md:top-[74px] max-md:bottom-0 max-md:h-[calc(100%-74px)] max-md:left-0 max-md:translate-x-0 max-md:rounded-none max-md:border-none max-md:shadow-none"
             style={{ backgroundImage: `url(${currentSlide.image})` }}
           />
         </AnimatePresence>
 
-        {/* Cinematic shade filters and gradient curves adjusted for mobile viewing frame */}
-        <div className="absolute inset-0 md:inset-0 z-10 bg-gradient-to-t from-[#0b0c0e] via-transparent to-black/50 max-md:top-[44vh] max-md:bg-gradient-to-t max-md:from-[#0b0c0e] max-md:to-transparent" />
+        {/* Cinematic shade filters and gradient curves adjusted to seamlessly blend the slide image */}
+        <div className="absolute inset-0 md:inset-0 z-10 bg-gradient-to-t from-[#0b0c0e] via-transparent to-black/50 max-md:top-auto max-md:bottom-0 max-md:h-[55%] max-md:bg-gradient-to-t max-md:from-black max-md:via-black/75 max-md:to-transparent pointer-events-none" />
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0b0c0e]/80 via-transparent to-transparent hidden md:block" />
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end h-full pb-6 sm:pb-12 md:pb-16 lg:pb-24 max-md:pt-[48vh]">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end h-full pb-4 sm:pb-8 md:pb-12 lg:pb-16 max-md:pb-10 max-md:justify-end max-md:h-[calc(100%-74px)] max-md:mt-[74px]">
           <MatrixParticles particleCount={30} showGrid={false} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end relative z-10">
             
-            {/* Left Headline (Replicating exact video typography and alignment) */}
-            <div className="lg:col-span-8 flex flex-col items-start gap-4 max-md:gap-3">
-
+            {/* Left Headline (Replicating exact video typography and alignment) - readjusted slightly downward on mobile */}
+            <div className="lg:col-span-8 flex flex-col items-start gap-4 max-md:gap-3.5 max-md:translate-y-2">
 
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 style={{ fontFamily: "Georgia, serif" }}
-                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-['Georgia',serif] tracking-tight leading-[1.05] font-extralight text-white"
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-['Georgia',serif] tracking-tight leading-[1.05] font-extralight text-white mt-5 sm:mt-8 md:mt-10 max-md:mt-8 translate-y-2 sm:translate-y-3"
               >
                 Spaces That Echo <br />
                 <span className="font-normal text-white">Your Story</span>
@@ -170,18 +159,18 @@ export default function Home({ onNavigate }: HomeProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="flex flex-col-reverse md:flex-row md:flex-wrap gap-4 mt-6 max-md:mt-3 w-full md:w-auto"
+                className="flex flex-col-reverse md:flex-row md:flex-wrap gap-4 mt-6 sm:mt-8 max-md:mt-4 w-full md:w-auto pb-2"
               >
                 <button
                   onClick={() => onNavigate("work")}
-                  className="px-6 py-3.5 bg-white text-black hover:bg-white/90 font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer font-bold flex items-center justify-center gap-2.5 w-full md:w-auto"
+                  className="px-6 py-3.5 bg-white text-black hover:bg-white/90 font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer font-bold flex items-center justify-center gap-2.5 w-full md:w-auto translate-y-1.5 sm:translate-y-2"
                 >
                   Explore the Work
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => onNavigate("contact")}
-                  className="px-6 py-3.5 bg-transparent border border-white/20 hover:border-white text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer flex items-center justify-center gap-2 w-full md:w-auto"
+                  className="px-6 py-3.5 bg-transparent border border-white/20 hover:border-white text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer flex items-center justify-center gap-2 w-full md:w-auto translate-y-1.5 sm:translate-y-2"
                 >
                   Contact Us
                 </button>
@@ -293,7 +282,7 @@ export default function Home({ onNavigate }: HomeProps) {
               {
                 metric: "10+",
                 title: "Collaborative Design Partnerships",
-                description: "Working with clients, studios, consultants, and developers to transform ideas into impactful architectural experiences.",
+                description: "Working with clients, companies, consultants, and developers to transform ideas into impactful architectural experiences.",
                 icon: <Star className="w-5 h-5 text-current" />
               }
             ].map((stat, idx) => (
@@ -364,7 +353,7 @@ export default function Home({ onNavigate }: HomeProps) {
               style={{ fontFamily: "Georgia, serif" }}
               className="text-xs tracking-[0.3em] text-[#00E5FF] uppercase block mb-3 font-semibold [text-shadow:0_0_8px_rgba(0,229,255,0.3)]"
             >
-              ARCHITECTURE & BIM DESIGN STUDIO
+              ARCHITECTURE & BIM DESIGN COMPANY
             </span>
             <h3 
               style={{ fontFamily: "Georgia, serif" }}
@@ -399,7 +388,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 desc: "A modern high-rise architectural proposal focused on sustainable urban living, façade detailing, smart circulation, and premium lifestyle experiences."
               },
               {
-                title: "Interior Visualization Studio",
+                title: "Interior Visualization Company",
                 location: "Cinematic 3D Visualization",
                 image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
                 desc: "Photorealistic architectural renders and walkthroughs designed with cinematic lighting, realistic textures, atmospheric environments, and immersive storytelling presentations."
@@ -460,7 +449,7 @@ export default function Home({ onNavigate }: HomeProps) {
               </h3>
             </div>
             <div className="lg:col-span-6 font-sans text-sm md:text-base text-zinc-300 font-light leading-relaxed max-w-lg">
-              Advanced BIM coordination, construction documentation, and visualization solutions developed for architects, developers, consultants, and design studios. Every project is crafted with accuracy, functionality, and visual excellence.
+              Advanced BIM coordination, construction documentation, and visualization solutions developed for architects, developers, consultants, and design companies. Every project is crafted with accuracy, functionality, and visual excellence.
             </div>
           </div>
 
@@ -550,162 +539,6 @@ export default function Home({ onNavigate }: HomeProps) {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. THE STUDIO BEHIND THE WORK (Video 0:28 - Kamal profile) */}
-      <section className="py-6 sm:py-16 md:py-20 lg:py-24 bg-black text-white border-t border-white/10 relative">
-        <MatrixParticles particleCount={35} showGrid={true} />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
-          <div className="flex justify-center w-full">
-            
-            {/* 1. DESKTOP/TABLET VIEW (Split grid layout with text card on left and image on right) */}
-            <div className="hidden md:flex w-full justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[960px] min-h-[550px] bg-black border border-white/20 overflow-hidden group shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_16px_48px_rgba(0,0,0,0.85)]">
-                
-                {/* Left Side: Elegant Text Card */}
-                <div className="p-8 lg:p-12 flex flex-col justify-between bg-black relative z-10 border-r border-white/10 text-left">
-                  <div className="my-auto flex flex-col">
-                    <span className="font-mono text-2xs tracking-[0.3em] text-[#00E5FF] uppercase mb-4 font-semibold [text-shadow:0_0_8px_rgba(0,229,255,0.3)]">
-                      THE MIND BEHIND THE MATRIX
-                    </span>
-                    <h3 className="text-3xl lg:text-4xl font-sans font-extralight text-white leading-tight mb-4 tracking-wide">
-                      The Studio Behind <br />
-                      <span className="font-normal text-white">the Work.</span>
-                    </h3>
-                    <p className="font-sans text-xs sm:text-sm text-zinc-100 font-light leading-relaxed mb-8 max-w-sm">
-                      "Founded in 2020, BUILD THE MATRIX Pvt.  Ltd. specializes in Architectural Design, BIM Modeling, and Visualization services for residential, commercial, and interior projects across the globe. Driven by creativity, technical precision, and collaborative design thinking."
-                    </p>
-                    
-                    {/* Active navigation controls */}
-                    <div className="flex flex-wrap gap-3">
-                      <button
-                        onClick={() => onNavigate("contact")}
-                        className="px-5 py-3 bg-white hover:bg-neutral-200 text-black font-mono text-[10px] tracking-wider uppercase transition-all duration-300 rounded-none font-bold shadow-md"
-                      >
-                        Explore advisory
-                      </button>
-                      <button
-                        onClick={() => onNavigate("studio")}
-                        className="px-5 py-3 bg-transparent border border-white/30 hover:border-white text-white font-mono text-[10px] tracking-wider uppercase transition-all duration-300 rounded-none cursor-pointer flex items-center gap-1.5"
-                      >
-                        The Work
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Director signature */}
-                  <div className="border-t border-white/15 pt-4 mt-6">
-                    <span className="font-sans text-base font-light block leading-none text-white tracking-wide">Kamal N.</span>
-                    <span className="font-mono text-[9px] text-zinc-400 block tracking-widest uppercase mt-1">
-                      FOUNDING DIRECTOR // PRINCIPAL VISUALIZER
-                    </span>
-                  </div>
-                </div>
-
-                {/* Right Side: Portrait Image focusing on the person */}
-                <div className="relative overflow-hidden bg-black">
-                  <img
-                    src="https://i.ibb.co/dwtDsv0S/file-0000000068807207bbda431bc4791212-2.jpg"
-                    alt="Kamal Matrix Leader"
-                    className="w-full h-full object-cover object-[center_20%] filter grayscale contrast-110 transition-all duration-1000 group-hover:scale-102 group-hover:grayscale-0 hover:grayscale-0"
-                    referrerPolicy="no-referrer"
-                  />
-                  {/* Subtle overlay gradients */}
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/15 to-black/45 pointer-events-none" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15 pointer-events-none" />
-                </div>
-
-              </div>
-            </div>
-
-            {/* 2. BEAUTIFULLY TAILORED MOBILE SPLIT VIEW (Visible only on mobile, optimized for a natural, colorful image profile interaction) */}
-            <div 
-              onClick={() => setIsLeaderImageGlowing(true)}
-              onTouchStart={() => setIsLeaderImageGlowing(true)}
-              className={`md:hidden w-full flex flex-col bg-black overflow-hidden border transition-all duration-500 max-w-[480px] shadow-2xl group cursor-pointer select-none ${
-                isLeaderImageGlowing ? "border-[#00E5FF]/60 shadow-[0_0_20px_rgba(0,229,255,0.3)] bg-zinc-950" : "border-white/15"
-              }`}
-            >
-              {/* Outer Split Row Segment */}
-              <div className="flex h-[240px] xs:h-[280px] items-stretch w-full relative">
-                
-                {/* Left Side: Elegant Text Block */}
-                <div className={`w-[52%] p-3.5 xs:p-4 flex flex-col justify-between transition-all duration-500 relative z-20 ${
-                  isLeaderImageGlowing ? "bg-zinc-950/90" : "bg-black"
-                }`}>
-                  <div className="flex flex-col">
-                    <span className="font-mono text-[7px] xs:text-[8px] tracking-[0.2em] uppercase block mb-1 font-bold text-[#00E5FF] [text-shadow:0_0_6px_rgba(0,229,255,0.25)]">
-                      THE MIND BEHIND THE MATRIX
-                    </span>
-                    <h3 className="font-sans text-[11px] xs:text-xs font-light text-white uppercase tracking-[0.11em] leading-tight mb-2">
-                      The Studio Behind <span className="font-normal text-[#00E5FF]">the Work.</span>
-                    </h3>
-                    <p className="font-sans text-[9px] xs:text-[10px] text-zinc-100 font-light leading-relaxed">
-                      Founded in 2020, BUILD THE MATRIX Pvt.  Ltd. delivers precise, innovative architectural design, BIM workflows, and visual experiences globally.
-                    </p>
-                  </div>
-                  
-                  <div className="border-t border-white/10 pt-1.5 flex items-center justify-between">
-                    <span className="font-mono text-[6.5px] text-zinc-400 uppercase tracking-widest block font-medium">
-                      CREATIVE LABS
-                    </span>
-                    {isLeaderImageGlowing && (
-                      <span className="font-mono text-[6.5px] text-[#00E5FF] tracking-widest block uppercase font-bold">
-                        ACTIVE VIEW
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Right Side: Portrait Image focusing on the person clearly with responsive natural color fade */}
-                <div className="w-[48%] relative overflow-hidden bg-black z-10 flex items-center justify-center">
-                  <img
-                    src="https://i.ibb.co/dwtDsv0S/file-0000000068807207bbda431bc4791212-2.jpg"
-                    alt="Kamal Matrix Leader"
-                    className={`w-full h-full object-cover object-[58%_center] transition-all duration-700 ${
-                      isLeaderImageGlowing 
-                        ? "scale-105 filter grayscale-0 brightness-100 contrast-102 saturate-105" 
-                        : "filter grayscale contrast-110"
-                    }`}
-                    referrerPolicy="no-referrer"
-                  />
-                  {/* Subtle fade/vignette to ensure soft blending with the layout */}
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/50 pointer-events-none" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/15 pointer-events-none" />
-                </div>
-              </div>
-
-              {/* Bottom Sync Bar: Direct Actions & Director signatures */}
-              <div className="w-full bg-black border-t border-white/15 px-3 py-2.5 flex items-center justify-between gap-2 z-20">
-                {/* Left: Interactive Navigation actions */}
-                <div className="flex gap-1.5 shrink-0">
-                  <button
-                    onClick={() => onNavigate("contact")}
-                    className="px-2 py-1.5 bg-white text-black font-mono text-[7.5px] tracking-wider uppercase font-bold text-center leading-none shadow-sm"
-                  >
-                    Advisory
-                  </button>
-                  <button
-                    onClick={() => onNavigate("studio")}
-                    className="px-2 py-1.5 bg-transparent border border-white/20 text-white font-mono text-[7.5px] tracking-wider uppercase text-center leading-none font-medium hover:border-white transition-colors"
-                  >
-                    The Work
-                  </button>
-                </div>
-
-                {/* Right: Director Title signature */}
-                <div className="text-right min-w-0">
-                  <span className="font-sans text-[10px] font-medium text-white block leading-none tracking-wide">Kamal N.</span>
-                  <span className="font-mono text-[5.5px] text-zinc-400 block tracking-widest uppercase mt-0.5 leading-none truncate max-w-[100px]">
-                    FOUNDING DIRECTOR
-                  </span>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>

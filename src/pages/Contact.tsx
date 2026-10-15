@@ -60,18 +60,18 @@ export default function Contact() {
               </h2>
             </div>
             <p className="hidden md:block lg:col-span-12 xl:col-span-7 font-sans text-xs sm:text-base text-studio-charcoal/80 font-light max-w-2xl leading-relaxed text-justify">
-              BUILD THE MATRIX Pvt.  Ltd. collaborates on carefully curated architectural, BIM, interior, and visualization projects that demand creativity, precision, and modern design thinking. Whether you are planning a residence, commercial environment, hospitality project, or visualization concept — our studio is ready to transform your vision into reality.
+              BUILD THE MATRIX Pvt.  Ltd. collaborates on carefully curated architectural, BIM, interior, and visualization projects that demand creativity, precision, and modern design thinking. Whether you are planning a residence, commercial environment, hospitality project, or visualization concept — our company is ready to transform your vision into reality.
             </p>
           </div>
         </div>
 
         {/* Flex container for reordering consultation form and contact cards */}
         <div className="flex flex-col">
-          {/* Studio Contact Section */}
+          {/* Company Contact Section */}
           <div id="studio-contact" className="order-1 mb-6 sm:mb-12 p-4 sm:p-8 border border-studio-black/10 bg-white/45 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.6)] rounded-none relative overflow-hidden">
             <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-studio-black/[0.08]">
               <span className="font-mono text-[9px] text-[#7F7A75] uppercase block tracking-widest font-bold">
-                STUDIO CONTACT
+                COMPANY CONTACT
               </span>
               <h3 className="font-serif text-xl sm:text-2xl text-studio-black font-semibold mt-1">
                 BUILD THE MATRIX Pvt.  Ltd.
@@ -87,7 +87,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6 pt-2">
               <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
                 <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
-                  Studio Email
+                  Company Email
                 </span>
                 <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
                   <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
@@ -117,7 +117,7 @@ export default function Contact() {
 
               <div className="p-3 sm:p-4 bg-white/55 backdrop-blur-sm border border-studio-black/5 flex flex-col justify-between hover:bg-white/85 hover:border-gold-bronze hover:shadow-lg transition-all duration-300 rounded-none shadow-sm">
                 <span className="font-mono text-[8.5px] sm:text-[9px] text-[#7F7A75] uppercase tracking-wider block font-semibold mb-1.5 sm:mb-2 font-medium">
-                  Studio Hotline & Lines
+                  Company Hotline & Lines
                 </span>
                 <div className="flex flex-col gap-1 text-xs font-sans text-studio-black font-medium">
                   <div className="text-[10px] text-[#7F7A75] font-mono">
@@ -407,7 +407,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 flex flex-col gap-6">
               <span className="font-mono text-[9px] tracking-[0.45em] text-gold-bronze uppercase block mb-1 font-semibold">
-                DESIGN PRINCIPLES & STUDIO VALUES
+                DESIGN PRINCIPLES & COMPANY VALUES
               </span>
               <h3 className="font-serif text-3xl sm:text-4xl font-light text-studio-black leading-tight">
                 The BUILD THE MATRIX Pvt.  Ltd. <br />
@@ -476,7 +476,7 @@ export default function Contact() {
               #
             </span>
             <h3 className="font-serif text-3xl sm:text-4xl font-light text-studio-black">
-              Studio <span className="italic font-normal text-gold-bronze">Enquiries</span>
+              Company <span className="italic font-normal text-gold-bronze">Enquiries</span>
             </h3>
           </div>
 
@@ -492,7 +492,7 @@ export default function Contact() {
               },
               {
                 q: "Q3 // Do you work on both residential and commercial projects?",
-                a: "Yes. Our studio handles residential, commercial, hospitality, workspace, retail, and conceptual architecture projects."
+                a: "Yes. Our company handles residential, commercial, hospitality, workspace, retail, and conceptual architecture projects."
               },
               {
                 q: "Q4 // What software workflows do you use?",

@@ -157,37 +157,40 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
               (INFO)
             </span>
 
-            <div className="flex flex-col gap-3.5 font-mono text-[10px] text-zinc-300 leading-relaxed pl-1">
+            <div 
+              style={{ fontFamily: '"Bookman Old Style", Bookman, "URW Bookman L", Georgia, serif' }}
+              className="flex flex-col gap-3.5 text-[10px] text-zinc-400 leading-relaxed pl-1"
+            >
               <div>
-                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-1 font-bold">Studio Address</span>
-                <p className="font-sans text-xs text-white leading-relaxed">
+                <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-1 font-bold">Company Address</span>
+                <p className="text-xs text-zinc-400 leading-relaxed">
                   Kandoli Street No 4, Saundhon wali, Chironwali, Canal Road | Dehradun, Uttarakhand | 248013
                 </p>
               </div>
 
               <div>
                 <span className="text-zinc-500 block uppercase text-[8px] tracking-wider mb-1 font-bold">Contact & Communications</span>
-                <div className="font-sans text-xs text-zinc-200 leading-relaxed space-y-1">
+                <div className="text-xs text-white leading-relaxed space-y-1">
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                     <span>
-                      WhatsApp: <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline font-medium">7505683585</a>
+                      WhatsApp: <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 hover:underline font-medium">7505683585</a>
                     </span>
-                    <span className="text-zinc-600">|</span>
+                    <span className="text-zinc-500">|</span>
                     <span>
-                      Contact: <a href="tel:+918126981337" className="text-white hover:text-[#00E5FF] transition-colors">8126981337</a>
+                      Contact: <a href="tel:+918126981337" className="text-white hover:underline transition-colors">8126981337</a>
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                     <span>
-                      TEL: <a href="tel:01244000023" className="text-white hover:text-[#00E5FF] transition-colors">0124-4000023/24</a>
+                      TEL: <a href="tel:01244000023" className="text-white hover:underline transition-colors">0124-4000023/24</a>
                     </span>
-                    <span className="text-zinc-600">|</span>
+                    <span className="text-zinc-500">|</span>
                     <span>
                       FAX: 0124-4000035
                     </span>
                   </div>
                   <div className="pt-0.5">
-                    <a href="mailto:contact@buildthematrix.com" className="text-amber-400 hover:underline">
+                    <a href="mailto:contact@buildthematrix.com" className="text-white hover:text-amber-400 hover:underline">
                       contact@buildthematrix.com
                     </a>
                   </div>

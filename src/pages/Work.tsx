@@ -124,11 +124,11 @@ export default function Work({ heroImage, interiorImage, exteriorImage, pavilion
       category: "COMMERCIAL SPACES",
       description: "A high-end retail concept focused on customer movement, luxury visual merchandising, spatial branding strategies, and immersive lighting environments designed for premium shopping experiences.",
       imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200",
-      client: "Retail Experience Studio",
+      client: "Retail Experience Company",
       scale: "580 m² GFA",
       materials: ["Polished Concrete Floors", "Architectural Lighting", "Blackened Steel Details"],
       specs: [
-        { label: "Design Concept", value: "Retail Experience Studio" },
+        { label: "Design Concept", value: "Retail Experience Company" },
         { label: "Experience Design", value: "High-end visual merchandising layout centered on customer circulation" },
         { label: "Lighting System", value: "Specialized spotlight grids and immersive physical branding features" }
       ]

@@ -370,7 +370,7 @@ export default function Process() {
                 <span className="italic font-normal text-gold-beige text-glow">Pre-Flight Policy</span>
               </h3>
               <p className="font-sans text-xs sm:text-sm text-gold-sand/85 leading-relaxed font-light text-justify">
-                Because we shape high-end brand spaces and hospitality sanctuaries designed to endure for decades, our studio enforces a strict quality policy across every parameter. BUILD THE MATRIX Pvt.  Ltd. works exclusively alongside premium, highly qualified licensed artisans.
+                Because we shape high-end brand spaces and hospitality sanctuaries designed to endure for decades, our company enforces a strict quality policy across every parameter. BUILD THE MATRIX Pvt.  Ltd. works exclusively alongside premium, highly qualified licensed artisans.
               </p>
               <div className="p-4 bg-white/[0.02] border border-white/[0.06] font-mono text-[8px] text-amber-500/90 tracking-widest">
                 WARNING: RANDOM ON-SITE MIX AUDITS CARRIED OUT WEEKLY WITHOUT EXCEPTION.

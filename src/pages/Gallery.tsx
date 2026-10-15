@@ -143,7 +143,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       category: "RESIDENTIAL",
       title: "MODERN RESIDENCE FACADE",
       location: "Ibiza, Spain",
-      camera: "Visualization Studio",
+      camera: "Visualization Company",
       settings: "Luxury Residential Concept",
       photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
@@ -165,7 +165,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       category: "INTERIORS",
       title: "LUXURY INTERIOR AMBIENCE",
       location: "Reykjavik, Iceland",
-      camera: "Interior Visualization Studio",
+      camera: "Interior Visualization Company",
       settings: "Modern Hospitality Concept",
       photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop",
@@ -198,7 +198,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
       category: "RESIDENTIAL",
       title: "MODERN URBAN SPATIAL FORM",
       location: "Amangiri, USA",
-      camera: "Urban Design Studio",
+      camera: "Urban Design Company",
       settings: "High-Rise Living Concept",
       photographer: "BUILD THE MATRIX Pvt.  Ltd.",
       imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop",
@@ -673,7 +673,7 @@ export default function Gallery({ onLightboxToggle }: GalleryProps) {
               </div>
 
               <p className="font-sans text-xs text-gold-sand/80 leading-relaxed font-light text-justify">
-                Our studio combines architectural creativity with modern digital systems to ensure every project maintains technical accuracy, visual excellence, and efficient coordination.
+                Our company combines architectural creativity with modern digital systems to ensure every project maintains technical accuracy, visual excellence, and efficient coordination.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">

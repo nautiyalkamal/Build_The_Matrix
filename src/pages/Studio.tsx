@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, Linkedin, Globe, ShieldCheck, UserCheck, CheckCircle2, Plus, Minus, ChevronLeft, ChevronRight } from "lucide-react";
-import { TeamMember } from "../types";
+import { Plus, Minus, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Studio() {
-  const [activeMemberIdx, setActiveMemberIdx] = useState(0);
-  const [expandedMobileMemberIdx, setExpandedMobileMemberIdx] = useState<number | null>(null);
   const [activeMobileGeometryIdx, setActiveMobileGeometryIdx] = useState<number | null>(null);
 
   const workspaceCanvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -127,65 +124,6 @@ export default function Studio() {
     }
   ];
 
-  const team: TeamMember[] = [
-    {
-      id: "member-1",
-      name: "Kamal Nautiyal",
-      role: "Founder / Principal Architect",
-      bio: "leads BUILD THE MATRIX Pvt.  Ltd. with a vision centered around modern architecture, intelligent BIM systems, and immersive design storytelling. His approach combines creativity, technical detailing, and cinematic spatial experiences to craft architecture that feels both functional and emotionally engaging.",
-      imageUrl: "https://i.ibb.co/fY3yy94y/new.jpg",
-      quote: "Architecture is not just about structures — it is about creating experiences people remember.",
-      specialities: [
-        "Architectural Design",
-        "BIM Coordination",
-        "Interior Concepts",
-        "3D Visualization",
-        "Modern Luxury Spaces",
-        "Spatial Branding"
-      ]
-    },
-    {
-      id: "member-2",
-      name: "BIM Design Team",
-      role: "Architectural Visualization & Coordination",
-      bio: "Our dedicated BIM specialists offer seamless model coordination, conflict resolution, construction detail tracking, and Revit system integration. We bridge the gap between creative geometry and structural accuracy.",
-      imageUrl: "https://images.unsplash.com/photo-1497215122487-ee34e0fa4169?q=80&w=600&auto=format&fit=crop",
-      quote: "Precision-driven workflows ensure every dimension of the model correlates perfectly with the physical space."
-    },
-    {
-      id: "member-3",
-      name: "Interior Design Department",
-      role: "Spatial Styling & Luxury Interiors",
-      bio: "We curate premium interiors that balance bespoke textures, custom lighting schemes, carefully modeled materials, and high-end modern furniture integrations to craft comfortable, memorable experiences.",
-      imageUrl: "https://images.unsplash.com/photo-1618219740975-d41987636d4a?q=80&w=600&auto=format&fit=crop",
-      quote: "We don't just decorate spaces — we sculpt physical coordinates that evoke tranquility."
-    },
-    {
-      id: "member-4",
-      name: "Visualization Team",
-      role: "3D Rendering & Cinematic Presentations",
-      bio: "A department of creative visualizers converting complex technical layouts into spectacular cinematic renderings, real-time walk-throughs, and highly authentic lighting simulations.",
-      imageUrl: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600&auto=format&fit=crop",
-      quote: "Immersive renders tell stories, allowing partners to experience their future space today."
-    },
-    {
-      id: "member-5",
-      name: "Technical Coordination Team",
-      role: "Construction Documentation & BIM Workflows",
-      bio: "Managing complex drawings, specifications, local regulatory code checks, and structural BIM workflows to guarantee flawless project delivery across all development stages.",
-      imageUrl: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&auto=format&fit=crop",
-      quote: "Organized documentation is the hidden blueprint behind every lasting landmark."
-    },
-    {
-      id: "member-6",
-      name: "Landscape & Urban Design",
-      role: "Outdoor & Environmental Planning",
-      bio: "Integrating modern buildings with surrounding nature, pedestrian systems, active green spaces, and sustainable exterior planning to bring spatial balance.",
-      imageUrl: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=600&auto=format&fit=crop",
-      quote: "An elite architectural structure must always complement the organic geometry of its environment."
-    }
-  ];
-
   return (
     <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-20 md:pb-24 bg-gold-sand text-studio-black min-h-screen relative">
       {/* Structural layout outlines indicating geometric plans */}
@@ -198,7 +136,7 @@ export default function Studio() {
         {/* Section Header */}
         <div className="w-full border-b-2 border-studio-black pb-2 mb-2 sm:mb-3 max-md:mt-5 max-md:pb-1.5 max-md:mb-1.5">
           <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.4em] text-black uppercase block font-semibold">
-            02 // THE STUDIO
+            02 // THE COMPANY
           </span>
         </div>
 
@@ -219,7 +157,7 @@ export default function Studio() {
               <motion.img
                 key={currentSlide}
                 src={studioImages[currentSlide]}
-                alt="Studio Interior Design"
+                alt="Company Interior Design"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -285,7 +223,7 @@ export default function Studio() {
           {/* Middle: Studio Core Statement & Philosophy */}
           <div className="lg:col-span-4 font-sans text-sm sm:text-base text-studio-charcoal/80 font-light leading-relaxed flex flex-col justify-center">
             <p className="mb-4 text-xs sm:text-sm">
-              BUILD THE MATRIX Pvt.  Ltd. is a contemporary architectural and BIM design studio focused on creating immersive, functional, and visually timeless spaces. Our practice combines architecture, interior design, BIM coordination, and cinematic visualization to deliver projects that balance creativity with technical precision.
+              BUILD THE MATRIX Pvt.  Ltd. is a contemporary architectural and BIM Design Company focused on creating immersive, functional, and visually timeless spaces. Our practice combines architecture, interior design, BIM coordination, and cinematic visualization to deliver projects that balance creativity with technical precision.
             </p>
             <p className="mb-4 text-xs sm:text-sm">
               We collaborate with homeowners, developers, and brands to transform ideas into modern spatial experiences through innovative and detail-driven execution.
@@ -364,282 +302,13 @@ export default function Studio() {
           </div>
         </div>
 
-        {/* Meet the Team Panel - Matches exact hover-expand interactive display from visual references */}
-        <div className="max-md:mt-6 transition-all duration-300">
-          {/* Mobile Heading: Placed above the separating boundary line with compact gap */}
-          <div className="block md:hidden mb-2.5">
-            <span className="font-mono text-[9px] tracking-[0.4em] text-studio-black uppercase block mb-1 font-bold border-b-2 border-studio-black pb-1.5">
-              # // TEAM ARCHITECT DIRECTORY
-            </span>
-            <h3 className="font-serif text-xl font-light text-studio-black leading-tight">
-              Meet The Creative Minds Behind <span className="italic">BUILD THE MATRIX Pvt.  Ltd.</span>
-            </h3>
-          </div>
 
-          <div className="border-b border-studio-black/[0.12] max-md:border-t max-md:border-studio-black/10 max-md:pt-4 pb-4 sm:pb-6 mb-6 max-md:mb-2 sm:mb-12">
-            {/* Desktop Heading: Preserved exactly as before */}
-            <div className="hidden md:block">
-              <span className="font-mono text-[10px] tracking-[0.4em] text-studio-black uppercase block mb-2 font-bold border-b-2 border-studio-black pb-2">
-                # // TEAM ARCHITECT DIRECTORY
-              </span>
-              <h3 className="font-serif text-3xl font-light text-studio-black lg:tracking-wide">
-                Meet The Creative Minds Behind <span className="italic">BUILD THE MATRIX Pvt.  Ltd.</span>
-              </h3>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-stretch min-h-0 lg:min-h-[500px]">
-            {/* Left Hand: Interactive Hover Name Column */}
-            <div className="lg:col-span-6 flex flex-col justify-start lg:border-r border-studio-black/[0.08] pr-0 lg:pr-12">
-              <ul className="flex flex-col divide-y divide-studio-black/[0.06]">
-                {team.map((member, idx) => {
-                  const isActive = idx === activeMemberIdx;
-                  const isMobileExpanded = idx === expandedMobileMemberIdx;
-                  return (
-                    <li
-                      key={member.id}
-                      className="py-4 max-md:py-[18px] cursor-pointer relative focus:outline-none transition-all duration-300"
-                      onMouseEnter={() => setActiveMemberIdx(idx)}
-                      onClick={() => {
-                        setActiveMemberIdx(idx);
-                        setExpandedMobileMemberIdx(prev => prev === idx ? null : idx);
-                      }}
-                    >
-                      {/* Active Background highlight indicator (Desktop) */}
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeTeamBg"
-                          className="absolute inset-0 bg-white/50 backdrop-blur-sm border-l-2 border-gold-bronze -z-10 px-4 shadow-sm hidden lg:block"
-                          transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                        />
-                      )}
-
-                      {/* Active Background highlight indicator (Mobile) */}
-                      {isMobileExpanded && (
-                        <motion.div
-                          layoutId="activeTeamBgMobile"
-                          className="absolute inset-0 bg-white/50 backdrop-blur-sm border-l-2 border-gold-bronze -z-10 px-4 shadow-sm block lg:hidden"
-                          transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                        />
-                      )}
-
-                      <div className="flex justify-between items-center group px-2">
-                        <div className="flex items-baseline gap-4">
-                          <span className="font-mono text-[10px] tracking-widest text-black md:text-gold-bronze font-semibold">
-                            0{idx + 1}
-                          </span>
-                          <span className={`font-serif text-xl sm:text-2xl tracking-wide duration-300 text-black md:text-studio-gray/80 ${
-                            isActive 
-                              ? "lg:text-studio-black lg:font-medium lg:pl-2 md:pl-0" 
-                              : "md:hover:text-studio-black"
-                          } ${
-                            isMobileExpanded 
-                              ? "md:text-studio-black font-medium pl-2" 
-                              : ""
-                          }`}>
-                            {member.name}
-                          </span>
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                          <span className={`font-mono text-[9px] uppercase tracking-wider text-right duration-300 text-black md:text-[#7c7267] ${isMobileExpanded ? "font-semibold text-white" : ""}`}>
-                            {member.role.split(" / ")[0].split(" — ")[0]}
-                          </span>
-                          <div className={`w-6 h-6 border transition-all duration-300 flex items-center justify-center shrink-0 shadow-sm ${
-                            isMobileExpanded || isActive
-                              ? "border-amber-400 bg-amber-400 text-black shadow-[0_2px_8px_rgba(251,191,36,0.3)]" 
-                              : "border-black bg-black text-white hover:bg-neutral-800"
-                          }`}>
-                            {isMobileExpanded || isActive ? (
-                              <Minus className="w-2.5 h-2.5" />
-                            ) : (
-                              <Plus className="w-2.5 h-2.5" />
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Mobile Inline Details Card for responsive flow (connected immediately to the active member button) */}
-                      <AnimatePresence>
-                        {isMobileExpanded && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0, y: 15 }}
-                            animate={{ opacity: 1, height: "auto", y: 0 }}
-                            exit={{ opacity: 0, height: 0, y: 15 }}
-                            transition={{ duration: 0.35, ease: "easeOut" }}
-                            className="mt-6 mb-4 block lg:hidden border border-studio-black/10 bg-white/75 backdrop-blur-xl p-5 shadow-[0_12px_36px_rgba(0,0,0,0.06)] rounded-none overflow-hidden"
-                          >
-                            <div className="flex flex-col gap-4">
-                              {/* Mobile Portrait with subtle overlay */}
-                              <div className={`relative aspect-[4/3] w-full bg-studio-charcoal/5 border border-studio-black/10 shadow-md rounded-none group-active:scale-[0.99] transition-transform duration-300 ${!(member.imageUrl.includes("i.ibb.co") || member.id === 'member-4') ? 'overflow-hidden' : ''}`}>
-                                <img
-                                  src={member.imageUrl}
-                                  alt={member.name}
-                                  className={`w-full h-full ${
-                                    (member.imageUrl.includes("i.ibb.co") || member.id === 'member-4')
-                                      ? 'object-contain object-center scale-100 p-1'
-                                      : member.id === 'member-1'
-                                        ? 'object-cover object-[center_20%]'
-                                        : 'object-cover object-center'
-                                  }`}
-                                  referrerPolicy="no-referrer"
-                                />
-                                {!(member.imageUrl.includes("i.ibb.co") || member.id === 'member-4') && (
-                                  <div className="absolute inset-0 bg-gradient-to-t from-studio-black/20 to-transparent pointer-events-none" />
-                                )}
-                              </div>
-
-                              {/* Mobile Credentials */}
-                              <div className="flex flex-col">
-                                <span className="font-mono text-[9.5px] tracking-widest text-[#B45309] font-bold uppercase leading-normal border-b border-studio-black/[0.08] pb-2 mb-2 block">
-                                  {member.role}
-                                </span>
-                                <p className="font-sans text-xs sm:text-sm text-studio-charcoal/85 leading-relaxed">
-                                  <span className="font-serif italic font-semibold text-studio-black">{member.name}</span> {member.bio}
-                                </p>
-
-                                {member.specialities && (
-                                  <div className="mt-5 border-t border-studio-black/[0.06] pt-4">
-                                    <span className="font-mono text-[8.5px] font-bold text-studio-black tracking-wider block uppercase mb-2">Specializing in:</span>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                                      {member.specialities.map((spec, sidx) => (
-                                        <span key={sidx} className="font-sans text-[11px] text-studio-charcoal/95 flex items-center gap-1.5">
-                                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B45309]" />
-                                          {spec}
-                                        </span>
-                                      ))}
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-
-                              {/* Mobile Quote */}
-                              <div className="border-l-2 border-gold-bronze pl-4.5 py-1.5 text-left bg-studio-black/[0.02] pr-2">
-                                <p className="font-serif text-[12.5px] italic text-studio-black/90 leading-relaxed">
-                                  “{member.quote}”
-                                </p>
-                              </div>
-
-                              {/* Mobile Social Contact icons */}
-                              <div className="flex justify-between items-center bg-white/60 backdrop-blur-md px-3.5 py-2.5 border border-white/95 rounded-none shadow-sm mt-2">
-                                <span className="font-mono text-[7px] text-[#7F7A75] tracking-widest uppercase font-semibold">
-                                  SECURE RECOGNITION REGISTRAR
-                                </span>
-                                <div className="flex gap-3 text-studio-charcoal/70">
-                                  <Linkedin className="w-4 h-4 hover:text-gold-bronze duration-305 cursor-pointer" />
-                                  <Mail className="w-4 h-4 hover:text-gold-bronze duration-305 cursor-pointer" />
-                                  <Globe className="w-4 h-4 hover:text-gold-bronze duration-305 cursor-pointer" />
-                                </div>
-                              </div>
-
-                              {/* Mobile Close Button — Beautifully stretched with elegant spacing to create the requested custom gap */}
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation(); // Avoid triggering parent row click/toggle
-                                  setExpandedMobileMemberIdx(null);
-                                }}
-                                className="w-full mt-7 py-3.5 bg-black hover:bg-neutral-900 active:bg-neutral-950 text-white font-mono text-[9.5px] tracking-[0.2em] uppercase transition-all duration-300 rounded-none font-extrabold text-center flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
-                              >
-                                ✕ CLOSE DETAILS
-                              </button>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            {/* Right Hand: Dynamic Photographic Portrait, Bio and Quote (matches Hover change, hidden on mobile) */}
-            <div className="hidden lg:flex lg:col-span-6 flex-col justify-between p-6 bg-white/45 backdrop-blur-xl border border-white/70 relative shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_12px_40px_rgba(0,0,0,0.05)]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeMemberIdx}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.4 }}
-                  className="flex flex-col h-full justify-between gap-6"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-                    {/* Portrait Image */}
-                    <div className={`md:col-span-5 relative aspect-[3/4] bg-studio-charcoal/5 border border-studio-black/10 shadow-md ${!(team[activeMemberIdx].imageUrl.includes("i.ibb.co") || team[activeMemberIdx].id === 'member-4') ? 'overflow-hidden' : ''}`}>
-                      <img
-                        src={team[activeMemberIdx].imageUrl}
-                        alt={team[activeMemberIdx].name}
-                        className={`w-full h-full ${
-                          (team[activeMemberIdx].imageUrl.includes("i.ibb.co") || team[activeMemberIdx].id === 'member-4')
-                            ? 'object-contain object-center scale-100 p-1'
-                            : team[activeMemberIdx].id === 'member-1'
-                              ? 'object-cover object-[center_20%]'
-                              : 'object-cover object-center'
-                        }`}
-                        referrerPolicy="no-referrer"
-                      />
-                      {!(team[activeMemberIdx].imageUrl.includes("i.ibb.co") || team[activeMemberIdx].id === 'member-4') && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-studio-black/20 to-transparent pointer-events-none" />
-                      )}
-                    </div>
-
-                    {/* Member Credentials */}
-                    <div className="md:col-span-7 flex flex-col">
-                      <h4 className="font-serif text-2xl font-light text-studio-black leading-none">
-                        {team[activeMemberIdx].name}
-                      </h4>
-                      <span className="font-mono text-[10.5px] tracking-widest text-[#B45309] font-semibold uppercase mt-3 leading-none border-b border-studio-black/[0.08] pb-3.5">
-                        {team[activeMemberIdx].role}
-                      </span>
-                      
-                      <p className="mt-4 font-sans text-xs sm:text-sm text-studio-charcoal/85 leading-relaxed">
-                        <span className="font-serif italic font-semibold text-studio-black">{team[activeMemberIdx].name}</span> {team[activeMemberIdx].bio}
-                      </p>
-
-                      {team[activeMemberIdx].specialities && (
-                        <div className="mt-4 pt-4 border-t border-studio-black/[0.06]">
-                          <span className="font-mono text-[9px] font-bold text-studio-black tracking-wider block uppercase mb-2">Specializing in:</span>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                            {team[activeMemberIdx].specialities.map((spec, sidx) => (
-                              <span key={sidx} className="font-sans text-[11px] text-studio-charcoal/95 flex items-center gap-1">
-                                <CheckCircle2 className="w-3 h-3 text-[#B45309]" />
-                                {spec}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Philosophic Stamp & Social Quote */}
-                  <div className="pt-6 border-t border-studio-black/[0.1] mt-4 flex flex-col justify-end gap-4">
-                    <p className="font-serif text-sm sm:text-base italic text-studio-black font-light leading-relaxed">
-                      “{team[activeMemberIdx].quote}”
-                    </p>
-
-                    <div className="flex justify-between items-center bg-white/50 backdrop-blur-md px-4 py-3 border border-white/85 rounded-none mt-2 shadow-sm">
-                      <span className="font-mono text-[8px] text-[#7F7A75] tracking-widest">
-                        SECURE PARTNERSHIP CODE: OBY-REPRESENTATIVE
-                      </span>
-                      <div className="flex gap-3 text-studio-charcoal/65">
-                        <Linkedin className="w-3.5 h-3.5 hover:text-gold-bronze duration-305 cursor-pointer" />
-                        <Mail className="w-3.5 h-3.5 hover:text-gold-bronze duration-305 cursor-pointer" />
-                        <Globe className="w-3.5 h-3.5 hover:text-gold-bronze duration-305 cursor-pointer" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
 
         {/* 3. Deep Dive: BUILD THE MATRIX Pvt.  Ltd. Creative Workspace */}
         {/* DESKTOP WORKSPACE LAYOUT (Unmodified for large views) */}
         <div className="hidden md:block mt-28 border-t border-white/10 pt-20">
           <span className="font-mono text-[10px] tracking-[0.4em] text-gold-bronze uppercase block mb-3 font-semibold">
-            # // DESIGN STUDIO
+            # // DESIGN COMPANY
           </span>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 flex flex-col gap-6">
@@ -648,12 +317,12 @@ export default function Studio() {
                 <span className="italic font-normal text-gold-bronze">Creative Workspace</span>
               </h3>
               <p className="font-sans text-xs sm:text-sm text-zinc-300 leading-relaxed font-light text-justify">
-                Our studio operates as a modern architectural and visualization workspace where ideas evolve through collaboration, technology, and creative experimentation.
+                Our company operates as a modern architectural and visualization workspace where ideas evolve through collaboration, technology, and creative experimentation.
               </p>
               
               <div className="border-t border-b border-white/10 py-4 my-2">
                 <span className="font-mono text-[10px] font-bold text-gold-bronze uppercase block mb-2">
-                  Designed as a hybrid architectural lab, the studio integrates:
+                  Designed as a hybrid architectural lab, the company integrates:
                 </span>
                 <ul className="flex flex-col gap-1.5 font-sans text-xs text-zinc-200 pl-3 list-disc">
                   <li>BIM workflows</li>
@@ -740,7 +409,7 @@ export default function Studio() {
           <div className="relative z-10">
             {/* Section Marker */}
             <span className="font-mono text-[9px] tracking-[0.35em] text-[#00E5FF] uppercase block mb-3 font-bold [text-shadow:0_0_10px_rgba(0,229,255,0.45)]">
-              # // DESIGN STUDIO
+              # // DESIGN COMPANY
             </span>
 
             <h3 className="font-serif text-xl font-light text-white leading-tight mb-3 tracking-wide">
@@ -749,7 +418,7 @@ export default function Studio() {
             </h3>
 
             <p className="font-sans text-[10.5px] text-zinc-100 font-light leading-relaxed mb-4 text-justify">
-              Our studio operates as a premium architectural and visualization lab where complex concepts translate into immersive spatial realities through intelligent design thinking.
+              Our company operates as a premium architectural and visualization lab where complex concepts translate into immersive spatial realities through intelligent design thinking.
             </p>
 
             {/* PORTION WITH PITCH BLACK BACKGROUND AND HIGH-CONTRAST TEXT */}

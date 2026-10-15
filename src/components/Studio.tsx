@@ -43,7 +43,7 @@ export default function Studio() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 items-end">
           <div className="lg:col-span-5">
             <span className="font-mono text-[10px] tracking-[0.4em] text-gold-bronze uppercase block mb-3 font-semibold">
-              04 // STUDIO INSIGHT
+              04 // COMPANY INSIGHT
             </span>
             <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-studio-black leading-tight">
               A Syndicate <br />
@@ -57,10 +57,10 @@ export default function Studio() {
           </div>
         </div>
 
-        {/* Studio Statistics Section */}
+        {/* Company Statistics Section */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 items-stretch border-t border-b border-studio-black/[0.1] py-12 mb-20">
           {[
-            { metric: "11", title: "Global Studio Minds", sub: "Paris, Kyoto, Oslo" },
+            { metric: "11", title: "Global Company Minds", sub: "Paris, Kyoto, Oslo" },
             { metric: "4.8B", title: "Value of Supervised Estates", sub: "Across 4 continents" },
             { metric: "16", title: "Historical Restoration Licenses", sub: "UNESCO Designated districts" },
             { metric: "Zero", title: "Carbon Operations Goal", sub: "By winter solstice 2028" },

@@ -441,7 +441,7 @@ export default function Contact() {
 
             <div className="border-t border-white/[0.04] pt-6 flex flex-col sm:flex-row sm:justify-between font-mono text-[9px] text-studio-gray gap-2 uppercase">
               <span>DESIGN PARTNERSHIP STATIONS // GLOBAL</span>
-              <span>© 2026 ARCHÉ STUDIO.</span>
+              <span>© 2026 ARCHÉ COMPANY.</span>
             </div>
 
           </div>

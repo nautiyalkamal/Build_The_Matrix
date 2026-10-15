@@ -79,7 +79,7 @@ export default function Hero({ onScrollToNext, onExploreProjects, imageUrl }: He
               className="px-6 py-3.5 bg-transparent hover:bg-white/[0.04] text-gold-light border border-white/[0.15] hover:border-gold-beige font-mono text-xs tracking-widest uppercase transition-all duration-500 flex items-center gap-3 cursor-pointer"
             >
               <Play className="w-3.5 h-3.5 text-gold-beige" />
-              Studio Film
+              Company Film
             </button>
           </motion.div>
         </div>

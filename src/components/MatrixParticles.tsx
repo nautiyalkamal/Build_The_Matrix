@@ -5,13 +5,15 @@ interface MatrixParticlesProps {
   showGrid?: boolean;
   accentColor?: string; // e.g., "rgba(0, 229, 255, " for electric blue
   gridColor?: string;
+  particleColor?: string;
 }
 
 export default function MatrixParticles({
   particleCount = 50,
   showGrid = true,
   accentColor = "rgba(0, 229, 255, ",
-  gridColor = "rgba(255, 255, 255, 0.02)"
+  gridColor = "rgba(255, 255, 255, 0.02)",
+  particleColor = "255, 255, 255"
 }: MatrixParticlesProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -105,7 +107,7 @@ export default function MatrixParticles({
         if (p.isElectric) {
           ctx.fillStyle = `${accentColor}${p.alpha})`;
         } else {
-          ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+          ctx.fillStyle = `rgba(${particleColor}, ${p.alpha})`;
         }
 
         ctx.beginPath();
@@ -122,7 +124,7 @@ export default function MatrixParticles({
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
     };
-  }, [particleCount, showGrid, accentColor, gridColor]);
+  }, [particleCount, showGrid, accentColor, gridColor, particleColor]);
 
   return (
     <div

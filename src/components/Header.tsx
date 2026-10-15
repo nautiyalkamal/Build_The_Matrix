@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import MatrixParticles from "./MatrixParticles";
 
 interface HeaderProps {
   activePage: string;
@@ -11,7 +12,7 @@ interface HeaderProps {
 
 const navItems = [
   { id: "home", label: "HOME" },
-  { id: "studio", label: "STUDIO" },
+  { id: "studio", label: "COMPANY" },
   { id: "work", label: "WORK" },
   { id: "gallery", label: "GALLERY" },
   { id: "process", label: "PROCESS" },
@@ -40,7 +41,7 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 ${
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 overflow-hidden ${
           isHidden ? "opacity-0 -translate-y-full pointer-events-none" : "opacity-100 translate-y-0"
         } ${
           isScrolled
@@ -50,7 +51,15 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
             : "py-8 bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        {/* Floating Matrix Particles background across the header */}
+        <MatrixParticles 
+          particleCount={25} 
+          showGrid={false} 
+          accentColor={isLightPage ? "rgba(196, 154, 108, " : "rgba(0, 229, 255, "}
+          particleColor={isLightPage ? "30, 30, 30" : "255, 255, 255"}
+        />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center relative z-10">
           {/* Logo / Title Area - BUILD THE MATRIX Pvt.  Ltd. */}
           <button
             onClick={() => handleNavClick("home")}
@@ -217,38 +226,40 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
                 <span className={`text-[8px] sm:text-[9px] uppercase tracking-wider block mb-1 font-semibold ${
                   isLightPage ? "text-studio-black/50" : "text-white/40"
                 }`}>
-                  Studio Address
+                  Company Address
                 </span>
-                <p className={`font-sans text-[11px] sm:text-xs leading-relaxed ${
-                  isLightPage ? "text-studio-black" : "text-zinc-200"
-                }`}>
+                <p 
+                  className={`font-sans text-[11px] sm:text-xs leading-relaxed font-light ${
+                    isLightPage ? "text-studio-black/60" : "text-zinc-400"
+                  }`}
+                >
                   Kandoli Street No 4, Saundhon wali, Chironwali, Canal Road | Dehradun, Uttarakhand | 248013
                 </p>
               </div>
 
               <div className={`font-sans text-[10.5px] sm:text-xs leading-relaxed space-y-1 ${
-                isLightPage ? "text-studio-black" : "text-zinc-300"
+                isLightPage ? "text-studio-black" : "text-white"
               }`}>
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                   <span>
-                    WhatsApp: <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline font-medium">7505683585</a>
+                    WhatsApp: <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className={`hover:underline font-medium ${isLightPage ? "text-emerald-700" : "text-white hover:text-emerald-300"}`}>7505683585</a>
                   </span>
-                  <span className="text-zinc-500">|</span>
+                  <span className={isLightPage ? "text-studio-black/30" : "text-white/60"}>|</span>
                   <span>
-                    Contact: <a href="tel:+918126981337" className="hover:underline font-medium">8126981337</a>
+                    Contact: <a href="tel:+918126981337" className={`hover:underline font-medium ${isLightPage ? "text-studio-black" : "text-white"}`}>8126981337</a>
                   </span>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                   <span>
-                    TEL: <a href="tel:01244000023" className="hover:underline">0124-4000023/24</a>
+                    TEL: <a href="tel:01244000023" className={`hover:underline ${isLightPage ? "text-studio-black" : "text-white"}`}>0124-4000023/24</a>
                   </span>
-                  <span className="text-zinc-500">|</span>
+                  <span className={isLightPage ? "text-studio-black/30" : "text-white/60"}>|</span>
                   <span>
                     FAX: 0124-4000035
                   </span>
-                  <span className="text-zinc-500">|</span>
+                  <span className={isLightPage ? "text-studio-black/30" : "text-white/60"}>|</span>
                   <span>
-                    <a href="mailto:contact@buildthematrix.com" className="text-amber-400 hover:underline font-medium">
+                    <a href="mailto:contact@buildthematrix.com" className={`hover:underline font-medium ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
                       contact@buildthematrix.com
                     </a>
                   </span>

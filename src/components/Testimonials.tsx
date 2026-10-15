@@ -22,7 +22,7 @@ export default function Testimonials() {
     },
     {
       id: "test-3",
-      quote: "Studio Arché has engineered not merely a raw concrete pavilion in our foggy woods, but an emotional spatial instrument that listens and breathes. The sound dampening of the basalt stone during mist hours is exceptionally meditative.",
+      quote: "Company Arché has engineered not merely a raw concrete pavilion in our foggy woods, but an emotional spatial instrument that listens and breathes. The sound dampening of the basalt stone during mist hours is exceptionally meditative.",
       client: "Kristin Lindqvist",
       role: "Director, Oslo Contemplative Center",
       project: "The Mist Pavilion, Oslo",

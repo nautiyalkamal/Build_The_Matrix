@@ -46,7 +46,7 @@ export default function About({ imageUrl }: AboutProps) {
           </div>
           <div className="lg:col-span-8">
             <p className="font-sans text-base md:text-lg text-studio-charcoal/80 font-light max-w-2xl leading-relaxed">
-              At Studio Arché, we believe luxury is not about excess. True luxury is the calm atmosphere that envelopes you when entering a curated space. It is the perfect angle of the morning sun hitting raw plaster, and the weight of a hand-cast bronze doorknob.
+              At Company Arché, we believe luxury is not about excess. True luxury is the calm atmosphere that envelopes you when entering a curated space. It is the perfect angle of the morning sun hitting raw plaster, and the weight of a hand-cast bronze doorknob.
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function About({ imageUrl }: AboutProps) {
               {/* Image with scaling hover effect & film grain */}
               <img
                 src={imageUrl}
-                alt="Studio Arche Pavilion Philosophy Space"
+                alt="Company Arche Pavilion Philosophy Space"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
