@@ -270,7 +270,7 @@ export default function Studio() {
         {/* Studio Statistics Section */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 items-stretch border-t border-b border-studio-black/[0.12] py-6 sm:py-12 mb-10 sm:mb-20">
           {[
-            { metric: "250+ M²", title: "Active BIM & Architectural Design Development", sub: "Residential, commercial, and visualization projects in progress." },
+            { metric: "150+ M", title: "Active BIM & Architectural Design Development", sub: "Residential, commercial, and visualization projects in progress." },
             { metric: "Est. 2020", title: "Founded With A Vision For Modern Spatial Innovation", sub: "Built on creativity, technology, and architectural excellence." },
             { metric: "BIM Integrated", title: "Advanced Revit & Visualization Workflow", sub: "Smart coordination systems for accurate and efficient project execution." },
           ].map((stat, idx) => (

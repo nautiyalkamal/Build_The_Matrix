@@ -120,36 +120,44 @@ export default function Home({ onNavigate }: HomeProps) {
         className="relative h-[85vh] sm:h-[90vh] lg:h-screen max-md:h-screen max-md:min-h-screen w-full flex items-center overflow-hidden bg-black select-none cursor-grab active:cursor-grabbing"
       >
         
-        {/* Fullscreen rotative slide backgrounds - positioned below header to not cover 1st portion, and spanning to cover 2nd portion completely on mobile */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide.id}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.85, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.4, ease: "easeInOut" }}
-            className="absolute inset-0 md:inset-0 z-0 bg-cover bg-center max-md:w-full max-md:top-[74px] max-md:bottom-0 max-md:h-[calc(100%-74px)] max-md:left-0 max-md:translate-x-0 max-md:rounded-none max-md:border-none max-md:shadow-none"
-            style={{ backgroundImage: `url(${currentSlide.image})` }}
-          />
-        </AnimatePresence>
+        {/* Slideshow image container: aspect ratio adjusted with object-cover so images reach till the h1 headline */}
+        <div className="absolute inset-x-0 top-20 sm:top-24 bottom-[170px] sm:bottom-[180px] md:bottom-[190px] lg:bottom-[200px] z-0 flex items-center justify-center overflow-hidden pointer-events-none p-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.9, ease: "easeInOut" }}
+              className="w-full h-full flex items-center justify-center relative"
+            >
+              <img
+                src={currentSlide.image}
+                alt={currentSlide.title}
+                className="w-full h-full object-cover object-center drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)]"
+              />
+              {/* Soft bottom edge transition blending seamlessly into the headline area */}
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-        {/* Cinematic shade filters and gradient curves adjusted to seamlessly blend the slide image */}
-        <div className="absolute inset-0 md:inset-0 z-10 bg-gradient-to-t from-[#0b0c0e] via-transparent to-black/50 max-md:top-auto max-md:bottom-0 max-md:h-[55%] max-md:bg-gradient-to-t max-md:from-black max-md:via-black/75 max-md:to-transparent pointer-events-none" />
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0b0c0e]/80 via-transparent to-transparent hidden md:block" />
+        {/* Subtle ground shadow behind the lower controls so buttons and text remain crisp */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none z-10" />
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end h-full pb-4 sm:pb-8 md:pb-12 lg:pb-16 max-md:pb-10 max-md:justify-end max-md:h-[calc(100%-74px)] max-md:mt-[74px]">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end h-full pb-4 sm:pb-8 md:pb-12 lg:pb-16 max-md:pb-10 max-md:justify-end">
           <MatrixParticles particleCount={30} showGrid={false} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end relative z-10">
             
-            {/* Left Headline (Replicating exact video typography and alignment) - readjusted slightly downward on mobile */}
-            <div className="lg:col-span-8 flex flex-col items-start gap-4 max-md:gap-3.5 max-md:translate-y-2">
+            {/* Left Headline (Replicating exact video typography and alignment) - moved upward */}
+            <div className="lg:col-span-8 flex flex-col items-start gap-4 max-md:gap-3 -translate-y-3 sm:-translate-y-5 lg:-translate-y-8">
 
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 style={{ fontFamily: "Georgia, serif" }}
-                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-['Georgia',serif] tracking-tight leading-[1.05] font-extralight text-white mt-5 sm:mt-8 md:mt-10 max-md:mt-8 translate-y-2 sm:translate-y-3"
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-['Georgia',serif] tracking-tight leading-[1.05] font-extralight text-white mt-2 sm:mt-4 md:mt-5"
               >
                 Spaces That Echo <br />
                 <span className="font-normal text-white">Your Story</span>
@@ -159,18 +167,18 @@ export default function Home({ onNavigate }: HomeProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="flex flex-col-reverse md:flex-row md:flex-wrap gap-4 mt-6 sm:mt-8 max-md:mt-4 w-full md:w-auto pb-2"
+                className="flex flex-col-reverse md:flex-row md:flex-wrap gap-4 mt-4 sm:mt-6 max-md:mt-3 w-full md:w-auto pb-2"
               >
                 <button
                   onClick={() => onNavigate("work")}
-                  className="px-6 py-3.5 bg-white text-black hover:bg-white/90 font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer font-bold flex items-center justify-center gap-2.5 w-full md:w-auto translate-y-1.5 sm:translate-y-2"
+                  className="px-6 py-3.5 bg-white text-black hover:bg-white/90 font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer font-bold flex items-center justify-center gap-2.5 w-full md:w-auto"
                 >
                   Explore the Work
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => onNavigate("contact")}
-                  className="px-6 py-3.5 bg-transparent border border-white/20 hover:border-white text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer flex items-center justify-center gap-2 w-full md:w-auto translate-y-1.5 sm:translate-y-2"
+                  className="px-6 py-3.5 bg-transparent border border-white/20 hover:border-white text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer flex items-center justify-center gap-2 w-full md:w-auto"
                 >
                   Contact Us
                 </button>
