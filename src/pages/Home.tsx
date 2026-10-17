@@ -23,10 +23,10 @@ export default function Home({ onNavigate }: HomeProps) {
   const slides: Slide[] = [
     {
       id: "slide-1",
-      subtitle: "ARCHITECTURAL DESIGN",
-      title: "Modern Villa Design",
-      location: "Luxury Residence Concept",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200"
+      subtitle: "COMMERCIAL ARCHITECTURE",
+      title: "Premium Workspace Concept",
+      location: "Modern Commercial Environment",
+      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200"
     },
     {
       id: "slide-2",
@@ -37,10 +37,10 @@ export default function Home({ onNavigate }: HomeProps) {
     },
     {
       id: "slide-3",
-      subtitle: "COMMERCIAL ARCHITECTURE",
-      title: "Premium Workspace Concept",
-      location: "Modern Commercial Environment",
-      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200"
+      subtitle: "ARCHITECTURAL DESIGN",
+      title: "Modern Villa Design",
+      location: "Luxury Residence Concept",
+      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200"
     },
     {
       id: "slide-4",
@@ -129,12 +129,25 @@ export default function Home({ onNavigate }: HomeProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="w-full h-full flex items-center justify-center relative"
+              className="w-full h-full flex items-center justify-center relative overflow-hidden"
             >
+              {/* For slide 3 on mobile: ambient background fills the exact covered area while the main image is zoomed out for a full architectural view */}
+              {currentSlide.id === "slide-3" && (
+                <img
+                  src={currentSlide.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="lg:hidden absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 pointer-events-none"
+                />
+              )}
               <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
-                className="w-full h-full object-cover object-center drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)]"
+                className={`w-full h-full drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)] ${
+                  currentSlide.id === "slide-3"
+                    ? "object-cover max-lg:object-contain relative z-10 max-lg:scale-[0.96]"
+                    : "object-cover object-center"
+                }`}
               />
               {/* Soft bottom edge transition blending seamlessly right into the top of the headline area on mobile */}
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none lg:hidden" />
