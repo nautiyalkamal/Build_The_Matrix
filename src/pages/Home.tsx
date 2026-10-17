@@ -131,22 +131,13 @@ export default function Home({ onNavigate }: HomeProps) {
               transition={{ duration: 0.9, ease: "easeInOut" }}
               className="w-full h-full flex items-center justify-center relative overflow-hidden"
             >
-              {/* For slide 3 on mobile: ambient background fills the exact covered area while the main image is zoomed out for a full architectural view */}
-              {currentSlide.id === "slide-3" && (
-                <img
-                  src={currentSlide.image}
-                  alt=""
-                  aria-hidden="true"
-                  className="lg:hidden absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 pointer-events-none"
-                />
-              )}
               <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
-                className={`w-full h-full drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)] ${
+                className={`w-full h-full drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)] object-cover ${
                   currentSlide.id === "slide-3"
-                    ? "object-cover max-lg:object-contain relative z-10 max-lg:scale-[0.96]"
-                    : "object-cover object-center"
+                    ? "max-lg:object-left lg:object-center"
+                    : "object-center"
                 }`}
               />
               {/* Soft bottom edge transition blending seamlessly right into the top of the headline area on mobile */}
