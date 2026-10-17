@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Phone, PhoneCall, Printer, Users, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import MatrixParticles from "./MatrixParticles";
 
@@ -248,29 +248,36 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
                     <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className={`hover:underline font-medium ${isLightPage ? "text-emerald-700" : "text-white hover:text-emerald-300"}`}>7505683585</a>
                   </span>
                   <span className={isLightPage ? "text-studio-black/30" : "text-white/60"}>|</span>
-                  <span>
-                    Contact: <a href="tel:+918126981337" className={`hover:underline font-medium ${isLightPage ? "text-studio-black" : "text-white"}`}>8126981337</a>
+                  <span className="inline-flex items-center gap-1">
+                    <Phone className={`w-3 h-3 shrink-0 ${isLightPage ? "text-studio-black" : "text-white"}`} />
+                    <a href="tel:+918126981337" className={`hover:underline font-medium ${isLightPage ? "text-studio-black" : "text-white"}`}>8126981337</a>
                   </span>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                  <span>
-                    TEL: <a href="tel:01244000023" className={`hover:underline ${isLightPage ? "text-studio-black" : "text-white"}`}>0124-4000023/24</a>
+                  <span className="inline-flex items-center gap-1">
+                    <PhoneCall className={`w-3 h-3 shrink-0 ${isLightPage ? "text-studio-black" : "text-white"}`} />
+                    <a href="tel:01244000023" className={`hover:underline ${isLightPage ? "text-studio-black" : "text-white"}`}>0124-4000023/24</a>
                   </span>
                   <span className={isLightPage ? "text-studio-black/30" : "text-white/60"}>|</span>
-                  <span>
-                    FAX: 0124-4000035
+                  <span className="inline-flex items-center gap-1">
+                    <Printer className={`w-3 h-3 shrink-0 ${isLightPage ? "text-studio-black" : "text-white"}`} />
+                    <span>0124-4000035</span>
                   </span>
                 </div>
                 <div className="flex items-center flex-nowrap whitespace-nowrap gap-x-1 sm:gap-x-1.5 text-[8.5px] sm:text-[10px] pt-0.5">
-                  <span className="shrink-0">
-                    HR: <a href="mailto:buildmatrix10@gmail.com" className={`hover:underline font-medium ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
+                  <span className="shrink-0 inline-flex items-center gap-1">
+                    <Users className={`w-3 h-3 shrink-0 ${isLightPage ? "text-studio-black" : "text-white"}`} />
+                    <a href="mailto:buildmatrix10@gmail.com" className={`hover:underline font-medium ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
                       buildmatrix10@gmail.com
                     </a>
                   </span>
                   <span className={`shrink-0 ${isLightPage ? "text-studio-black/30" : "text-white/60"}`}>|</span>
-                  <a href="mailto:contact@buildthematrix.com" className={`hover:underline font-medium shrink-0 ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
-                    contact@buildthematrix.com
-                  </a>
+                  <span className="shrink-0 inline-flex items-center gap-1">
+                    <Mail className={`w-3 h-3 shrink-0 ${isLightPage ? "text-amber-700" : "text-white"}`} />
+                    <a href="mailto:contact@buildthematrix.com" className={`hover:underline font-medium shrink-0 ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
+                      contact@buildthematrix.com
+                    </a>
+                  </span>
                 </div>
               </div>
 

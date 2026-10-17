@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Sparkles, ArrowRight, CornerDownRight } from "lucide-react";
+import { Sparkles, ArrowRight, CornerDownRight, Phone, PhoneCall, Printer, Users, Mail } from "lucide-react";
 
 interface FooterProps {
   onNavigate: (pageId: string) => void;
@@ -179,29 +179,36 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
                       <a href="https://wa.me/917505683585" target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 hover:underline font-medium">7505683585</a>
                     </span>
                     <span className="text-zinc-500">|</span>
-                    <span>
-                      Contact: <a href="tel:+918126981337" className="text-white hover:underline transition-colors">8126981337</a>
+                    <span className="inline-flex items-center gap-1">
+                      <Phone className="w-3 h-3 text-white shrink-0" />
+                      <a href="tel:+918126981337" className="text-white hover:underline transition-colors">8126981337</a>
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                    <span>
-                      TEL: <a href="tel:01244000023" className="text-white hover:underline transition-colors">0124-4000023/24</a>
+                    <span className="inline-flex items-center gap-1">
+                      <PhoneCall className="w-3 h-3 text-white shrink-0" />
+                      <a href="tel:01244000023" className="text-white hover:underline transition-colors">0124-4000023/24</a>
                     </span>
                     <span className="text-zinc-500">|</span>
-                    <span>
-                      FAX: 0124-4000035
+                    <span className="inline-flex items-center gap-1">
+                      <Printer className="w-3 h-3 text-white shrink-0" />
+                      <span>0124-4000035</span>
                     </span>
                   </div>
-                  <div className="pt-0.5 flex items-center flex-nowrap whitespace-nowrap gap-x-1.5 sm:gap-x-2 text-[9.5px] sm:text-[10.5px] lg:text-[11px]">
-                    <span className="shrink-0">
-                      HR: <a href="mailto:buildmatrix10@gmail.com" className="text-white hover:text-amber-400 hover:underline">
+                  <div className="pt-0.5 flex items-center flex-nowrap whitespace-nowrap gap-x-1 sm:gap-x-1.5 text-[10.5px] sm:text-[11.5px] lg:text-[12px] xl:text-[12.5px] tracking-tight">
+                    <span className="shrink-0 inline-flex items-center gap-1">
+                      <Users className="w-3 h-3 text-white shrink-0" />
+                      <a href="mailto:buildmatrix10@gmail.com" className="text-white hover:text-amber-400 hover:underline font-medium">
                         buildmatrix10@gmail.com
                       </a>
                     </span>
                     <span className="text-zinc-500 shrink-0">|</span>
-                    <a href="mailto:contact@buildthematrix.com" className="text-white hover:text-amber-400 hover:underline shrink-0">
-                      contact@buildthematrix.com
-                    </a>
+                    <span className="inline-flex items-center gap-1 shrink-0">
+                      <Mail className="w-3 h-3 text-white shrink-0" />
+                      <a href="mailto:contact@buildthematrix.com" className="text-white hover:text-amber-400 hover:underline shrink-0 font-medium">
+                        contact@buildthematrix.com
+                      </a>
+                    </span>
                   </div>
                 </div>
               </div>
