@@ -120,8 +120,8 @@ export default function Home({ onNavigate }: HomeProps) {
         className="relative h-[85vh] sm:h-[90vh] lg:h-screen max-md:h-screen max-md:min-h-screen w-full flex items-center overflow-hidden bg-black select-none cursor-grab active:cursor-grabbing"
       >
         
-        {/* Slideshow image container: aspect ratio adjusted with object-cover so images reach till the h1 headline */}
-        <div className="absolute inset-x-0 top-20 sm:top-24 bottom-[170px] sm:bottom-[180px] md:bottom-[190px] lg:bottom-[200px] z-0 flex items-center justify-center overflow-hidden pointer-events-none p-0">
+        {/* Slideshow image container: full screen cover on desktop view, precisely covers up to the top of h1 on mobile view */}
+        <div className="absolute inset-x-0 top-20 sm:top-24 bottom-[245px] sm:bottom-[235px] md:bottom-[225px] lg:inset-0 lg:top-0 lg:bottom-0 lg:h-full z-0 flex items-center justify-center overflow-hidden pointer-events-none p-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide.id}
@@ -136,28 +136,28 @@ export default function Home({ onNavigate }: HomeProps) {
                 alt={currentSlide.title}
                 className="w-full h-full object-cover object-center drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)]"
               />
-              {/* Soft bottom edge transition blending seamlessly into the headline area */}
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+              {/* Soft bottom edge transition blending seamlessly right into the top of the headline area on mobile */}
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none lg:hidden" />
             </motion.div>
           </AnimatePresence>
         </div>
 
         {/* Subtle ground shadow behind the lower controls so buttons and text remain crisp */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-32 lg:h-56 bg-gradient-to-t from-black via-black/65 to-transparent pointer-events-none z-10" />
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end h-full pb-4 sm:pb-8 md:pb-12 lg:pb-16 max-md:pb-10 max-md:justify-end">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end h-full pb-4 sm:pb-8 md:pb-12 lg:pb-10 max-md:pb-10 max-md:justify-end">
           <MatrixParticles particleCount={30} showGrid={false} />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end relative z-10 lg:translate-y-4">
             
-            {/* Left Headline (Replicating exact video typography and alignment) - moved upward */}
-            <div className="lg:col-span-8 flex flex-col items-start gap-4 max-md:gap-3 -translate-y-3 sm:-translate-y-5 lg:-translate-y-8">
+            {/* Left Headline (Replicating exact video typography and alignment) - adjusted slightly downward on desktop view */}
+            <div className="lg:col-span-8 flex flex-col items-start gap-4 max-md:gap-3 -translate-y-3 sm:-translate-y-5 lg:translate-y-2">
 
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 style={{ fontFamily: "Georgia, serif" }}
-                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-['Georgia',serif] tracking-tight leading-[1.05] font-extralight text-white mt-2 sm:mt-4 md:mt-5"
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-['Georgia',serif] tracking-tight leading-[1.05] font-extralight text-white mt-2 sm:mt-4 md:mt-5 lg:mt-6"
               >
                 Spaces That Echo <br />
                 <span className="font-normal text-white">Your Story</span>

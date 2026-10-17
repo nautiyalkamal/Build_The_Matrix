@@ -52,8 +52,8 @@ export default function Contact() {
             </span>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end">
-            <p className="hidden md:block lg:col-span-12 font-sans text-xs sm:text-base text-studio-charcoal/80 font-light max-w-3xl leading-relaxed text-justify">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end lg:hidden">
+            <p className="hidden md:block lg:hidden font-sans text-xs sm:text-base text-studio-charcoal/80 font-light max-w-3xl leading-relaxed text-justify">
               BUILD THE MATRIX Pvt.  Ltd. collaborates on carefully curated architectural, BIM, interior, and visualization projects that demand creativity, precision, and modern design thinking. Whether you are planning a residence, commercial environment, hospitality project, or visualization concept — our company is ready to transform your vision into reality.
             </p>
           </div>

@@ -305,26 +305,27 @@ export default function Studio() {
 
 
         {/* 3. Deep Dive: BUILD THE MATRIX Pvt.  Ltd. Creative Workspace */}
+        {/* 3. Deep Dive: BUILD THE MATRIX Pvt.  Ltd. Creative Workspace */}
         {/* DESKTOP WORKSPACE LAYOUT (Unmodified for large views) */}
-        <div className="hidden md:block mt-28 border-t border-white/10 pt-20">
-          <span className="font-mono text-[10px] tracking-[0.4em] text-gold-bronze uppercase block mb-3 font-semibold">
+        <div className="hidden md:block mt-28 border-t border-studio-black/15 pt-20">
+          <span className="font-mono text-[10px] tracking-[0.4em] text-studio-black uppercase block mb-3 font-semibold">
             # // DESIGN COMPANY
           </span>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 flex flex-col gap-6">
-              <h3 className="font-serif text-3xl sm:text-4xl font-light text-white leading-tight">
+              <h3 className="font-serif text-3xl sm:text-4xl font-light text-studio-black leading-tight">
                 BUILD THE MATRIX Pvt.  Ltd. <br />
                 <span className="italic font-normal text-gold-bronze">Creative Workspace</span>
               </h3>
-              <p className="font-sans text-xs sm:text-sm text-zinc-300 leading-relaxed font-light text-justify">
+              <p className="font-sans text-xs sm:text-sm text-studio-charcoal leading-relaxed font-normal text-justify">
                 Our company operates as a modern architectural and visualization workspace where ideas evolve through collaboration, technology, and creative experimentation.
               </p>
               
-              <div className="border-t border-b border-white/10 py-4 my-2">
+              <div className="border-t border-b border-studio-black/15 py-4 my-2">
                 <span className="font-mono text-[10px] font-bold text-gold-bronze uppercase block mb-2">
                   Designed as a hybrid architectural lab, the company integrates:
                 </span>
-                <ul className="flex flex-col gap-1.5 font-sans text-xs text-zinc-200 pl-3 list-disc">
+                <ul className="flex flex-col gap-1.5 font-sans text-xs text-studio-charcoal pl-3 list-disc">
                   <li>BIM workflows</li>
                   <li>3D visualization systems</li>
                   <li>Material exploration</li>
@@ -334,55 +335,41 @@ export default function Studio() {
                 </ul>
               </div>
 
-              <div className="p-4 bg-zinc-950/60 border border-white/10 flex flex-col gap-2 font-mono text-[9px] text-zinc-400 shadow-sm">
-                <div className="flex justify-between">
-                  <span>REGIONAL HUB</span>
-                  <span className="text-white font-semibold">WEST COAST HQ</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>WORKFLOW MODE</span>
-                  <span className="text-[#00E5FF] font-semibold">BIM INTEGRATED</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>LAB STANDARDS</span>
-                  <span className="text-white font-semibold">CINEMATIC REALISM</span>
-                </div>
-              </div>
             </div>
 
             {/* Architectural details cards with grid representation */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="p-6 bg-studio-charcoal/40 backdrop-blur-xl border border-white/10 flex flex-col gap-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_10px_30px_rgba(0,0,0,0.4)] hover:bg-studio-charcoal/60 transition-all duration-300">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black">
+              <div className="p-6 bg-white/55 backdrop-blur-xl border border-studio-black/10 flex flex-col gap-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_10px_30px_rgba(0,0,0,0.04)] hover:bg-white/80 transition-all duration-300">
+                <div className="w-10 h-10 rounded-full bg-studio-black flex items-center justify-center text-white">
                   <span className="font-mono text-[10px] font-bold">01</span>
                 </div>
-                <span className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF] block -mb-2 font-bold select-none">[DESIGN WORKFLOW]</span>
-                <h4 className="font-serif text-lg text-white">BIM & Visualization Lab</h4>
-                <p className="font-sans text-[11px] text-zinc-400 leading-relaxed font-light mb-1">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-gold-bronze block -mb-2 font-bold select-none">[DESIGN WORKFLOW]</span>
+                <h4 className="font-serif text-lg text-studio-black font-medium">BIM & Visualization Lab</h4>
+                <p className="font-sans text-[11px] text-studio-charcoal leading-relaxed font-normal mb-1">
                   Our digital workspace is equipped for:
                 </p>
-                <ul className="font-sans text-[11px] text-zinc-200 pl-4 list-disc space-y-1 -mt-2 leading-relaxed font-light">
+                <ul className="font-sans text-[11px] text-studio-charcoal/90 pl-4 list-disc space-y-1 -mt-2 leading-relaxed font-normal">
                   <li>Revit-based BIM coordination</li>
                   <li>High-detail 3D modeling</li>
                   <li>Photorealistic rendering</li>
                   <li>Construction documentation</li>
                   <li>Architectural animation workflows</li>
                 </ul>
-                <p className="font-sans text-xs text-zinc-300 leading-relaxed font-light text-justify pt-2 border-t border-white/10 mt-auto">
+                <p className="font-sans text-xs text-studio-charcoal leading-relaxed font-normal text-justify pt-2 border-t border-studio-black/10 mt-auto">
                   Every project is developed through a precise and collaborative design process ensuring technical accuracy and aesthetic excellence.
                 </p>
               </div>
 
-              <div className="p-6 bg-studio-charcoal/40 backdrop-blur-xl border border-white/10 flex flex-col gap-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_10px_30px_rgba(0,0,0,0.4)] hover:bg-studio-charcoal/60 transition-all duration-300">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black">
+              <div className="p-6 bg-white/55 backdrop-blur-xl border border-studio-black/10 flex flex-col gap-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_10px_30px_rgba(0,0,0,0.04)] hover:bg-white/80 transition-all duration-300">
+                <div className="w-10 h-10 rounded-full bg-studio-black flex items-center justify-center text-white">
                   <span className="font-mono text-[10px] font-bold">02</span>
                 </div>
-                <span className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF] block -mb-2 font-bold select-none">[TACTILE EXPLORATION]</span>
-                <h4 className="font-serif text-lg text-white">Architectural Material Exploration</h4>
-                <p className="font-sans text-[11px] text-zinc-400 leading-relaxed font-light mb-1">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-gold-bronze block -mb-2 font-bold select-none">[TACTILE EXPLORATION]</span>
+                <h4 className="font-serif text-lg text-studio-black font-medium">Architectural Material Exploration</h4>
+                <p className="font-sans text-[11px] text-studio-charcoal leading-relaxed font-normal mb-1">
                   Clients and collaborators can explore:
                 </p>
-                <ul className="font-sans text-[11px] text-zinc-200 pl-4 list-disc space-y-1 -mt-2 leading-relaxed font-light">
+                <ul className="font-sans text-[11px] text-studio-charcoal/90 pl-4 list-disc space-y-1 -mt-2 leading-relaxed font-normal">
                   <li>Material palettes</li>
                   <li>Lighting concepts</li>
                   <li>Texture studies</li>
@@ -390,7 +377,7 @@ export default function Studio() {
                   <li>Interior moodboards</li>
                   <li>Modern façade inspirations</li>
                 </ul>
-                <p className="font-sans text-xs text-zinc-300 leading-relaxed font-light text-justify pt-2 border-t border-white/10 mt-auto">
+                <p className="font-sans text-xs text-studio-charcoal leading-relaxed font-normal text-justify pt-2 border-t border-studio-black/10 mt-auto">
                   Each project begins with visual storytelling and conceptual experimentation before moving into technical development.
                 </p>
               </div>

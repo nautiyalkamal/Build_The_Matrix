@@ -59,11 +59,11 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
           particleColor={isLightPage ? "30, 30, 30" : "255, 255, 255"}
         />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center relative z-10">
+        <div className="w-full max-w-7xl lg:max-w-none mx-auto px-6 lg:pl-6 lg:pr-8 xl:pl-8 xl:pr-10 flex justify-between items-center relative z-10">
           {/* Logo / Title Area - BUILD THE MATRIX Pvt.  Ltd. */}
           <button
             onClick={() => handleNavClick("home")}
-            className="flex flex-col items-start cursor-pointer text-left group gap-0.5 pointer-events-auto shrink-0"
+            className="flex flex-col items-start cursor-pointer text-left group gap-0.5 pointer-events-auto shrink-0 lg:mr-auto"
           >
             <span className={`font-sans text-base whitespace-nowrap tracking-[0.14em] sm:tracking-[0.2em] md:tracking-[0.25em] font-bold leading-none transition-colors duration-300 ${
               isLightPage ? "text-studio-black hover:text-studio-black/80" : "text-white hover:text-white/80"
