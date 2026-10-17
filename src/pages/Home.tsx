@@ -36,13 +36,6 @@ export default function Home({ onNavigate }: HomeProps) {
       image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200"
     },
     {
-      id: "slide-3",
-      subtitle: "ARCHITECTURAL DESIGN",
-      title: "Modern Villa Design",
-      location: "Luxury Residence Concept",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200"
-    },
-    {
       id: "slide-4",
       subtitle: "INTERIOR STYLING",
       title: "Luxury Café & Lounge",
@@ -134,11 +127,7 @@ export default function Home({ onNavigate }: HomeProps) {
               <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
-                className={`w-full h-full drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)] object-cover ${
-                  currentSlide.id === "slide-3"
-                    ? "max-lg:object-left lg:object-center"
-                    : "object-center"
-                }`}
+                className="w-full h-full drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)] object-cover object-center"
               />
               {/* Soft bottom edge transition blending seamlessly right into the top of the headline area on mobile */}
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none lg:hidden" />
