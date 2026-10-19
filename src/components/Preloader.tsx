@@ -216,8 +216,8 @@ export default function Preloader({ onComplete }: PreloaderProps) {
     let angle = -0.05;
 
     const render = () => {
-      // Elegant classic matte black with subtle ambient vignette
-      ctx.fillStyle = "#0a0a0a";
+      // Pure pitch black background
+      ctx.fillStyle = "#000000";
       ctx.fillRect(0, 0, width, height);
 
       // Ambient luxury mixed-colored particles flowing beautifully in sync with the structure
@@ -294,7 +294,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0a0a] text-white select-none overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black text-white select-none overflow-hidden"
     >
       {/* Background blueprint render */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
