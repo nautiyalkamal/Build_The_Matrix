@@ -198,23 +198,13 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
                   <div className="pt-0.5 flex flex-col gap-y-1 text-[11px] sm:text-xs lg:text-[12.5px] leading-snug">
                     <span className="inline-flex items-center gap-1.5">
                       <Users className="w-3 h-3 text-white shrink-0" />
-                      <a 
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=contactbuildthematrix@gmail.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-white hover:text-amber-400 hover:underline font-medium"
-                      >
+                      <a href="mailto:contactbuildthematrix@gmail.com" className="text-white hover:text-amber-400 hover:underline font-medium">
                         contactbuildthematrix@gmail.com
                       </a>
                     </span>
                     <span className="inline-flex items-center gap-1.5">
                       <Mail className="w-3 h-3 text-white shrink-0" />
-                      <a 
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=contactbuildthematrix@gmail.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-white hover:text-amber-400 hover:underline font-medium"
-                      >
+                      <a href="mailto:contactbuildthematrix@gmail.com" className="text-white hover:text-amber-400 hover:underline font-medium">
                         contact@buildthematrix.com
                       </a>
                     </span>

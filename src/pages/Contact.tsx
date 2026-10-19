@@ -85,14 +85,7 @@ export default function Contact() {
                 </span>
                 <div className="flex items-center gap-2 text-xs font-sans text-studio-black font-medium">
                   <Mail className="w-3.5 h-3.5 text-gold-bronze flex-shrink-0" />
-                  <a 
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=contactbuildthematrix@gmail.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="hover:underline truncate"
-                  >
-                    contactbuildthematrix@gmail.com
-                  </a>
+                  <a href="mailto:contactbuildthematrix@gmail.com" className="hover:underline truncate">contactbuildthematrix@gmail.com</a>
                 </div>
               </div>
 
