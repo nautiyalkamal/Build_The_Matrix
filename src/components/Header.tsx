@@ -264,17 +264,16 @@ export default function Header({ activePage, onNavigate, isLightboxOpen, isProje
                     <span>0124-4000035</span>
                   </span>
                 </div>
-                <div className="flex items-center flex-nowrap whitespace-nowrap gap-x-1 sm:gap-x-1.5 text-[8.5px] sm:text-[10px] pt-0.5">
-                  <span className="shrink-0 inline-flex items-center gap-1">
+                <div className="flex flex-col gap-y-1 text-[8.5px] sm:text-[10px] pt-0.5">
+                  <span className="inline-flex items-center gap-1.5">
                     <Users className={`w-3 h-3 shrink-0 ${isLightPage ? "text-studio-black" : "text-white"}`} />
-                    <a href="mailto:buildmatrix10@gmail.com" className={`hover:underline font-medium ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
-                      buildmatrix10@gmail.com
+                    <a href="mailto:contactbuildthematrix@gmail.com" className={`hover:underline font-medium ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
+                      contactbuildthematrix@gmail.com
                     </a>
                   </span>
-                  <span className={`shrink-0 ${isLightPage ? "text-studio-black/30" : "text-white/60"}`}>|</span>
-                  <span className="shrink-0 inline-flex items-center gap-1">
+                  <span className="inline-flex items-center gap-1.5">
                     <Mail className={`w-3 h-3 shrink-0 ${isLightPage ? "text-amber-700" : "text-white"}`} />
-                    <a href="mailto:contact@buildthematrix.com" className={`hover:underline font-medium shrink-0 ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
+                    <a href="mailto:contact@buildthematrix.com" className={`hover:underline font-medium ${isLightPage ? "text-amber-700" : "text-white hover:text-amber-300"}`}>
                       contact@buildthematrix.com
                     </a>
                   </span>

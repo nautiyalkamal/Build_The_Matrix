@@ -195,17 +195,16 @@ export default function Footer({ onNavigate, curvedStructureImage }: FooterProps
                       <span>0124-4000035</span>
                     </span>
                   </div>
-                  <div className="pt-0.5 flex items-center flex-nowrap whitespace-nowrap gap-x-1 sm:gap-x-1.5 text-[10.5px] sm:text-[11.5px] lg:text-[12px] xl:text-[12.5px] tracking-tight">
-                    <span className="shrink-0 inline-flex items-center gap-1">
+                  <div className="pt-0.5 flex flex-col gap-y-1 text-[11px] sm:text-xs lg:text-[12.5px] leading-snug">
+                    <span className="inline-flex items-center gap-1.5">
                       <Users className="w-3 h-3 text-white shrink-0" />
-                      <a href="mailto:buildmatrix10@gmail.com" className="text-white hover:text-amber-400 hover:underline font-medium">
-                        buildmatrix10@gmail.com
+                      <a href="mailto:contactbuildthematrix@gmail.com" className="text-white hover:text-amber-400 hover:underline font-medium">
+                        contactbuildthematrix@gmail.com
                       </a>
                     </span>
-                    <span className="text-zinc-500 shrink-0">|</span>
-                    <span className="inline-flex items-center gap-1 shrink-0">
+                    <span className="inline-flex items-center gap-1.5">
                       <Mail className="w-3 h-3 text-white shrink-0" />
-                      <a href="mailto:contact@buildthematrix.com" className="text-white hover:text-amber-400 hover:underline shrink-0 font-medium">
+                      <a href="mailto:contact@buildthematrix.com" className="text-white hover:text-amber-400 hover:underline font-medium">
                         contact@buildthematrix.com
                       </a>
                     </span>
